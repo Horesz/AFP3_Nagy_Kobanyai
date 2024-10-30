@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Calzone",
+        "price":2500,
+        "imagePath":"calzone.jpg"
+    },
+    {
+        "id":2,
+        "name":"Kukoricás",
+        "price":2000,
+        "imagePath":"kukoricas.jpg"
+    },
+    {
+        "id":3,
+        "name":"Mozzarella",
+        "price":2800,
+        "imagePath":"mozzarella.jpg"
+    },
+    {
+        "id":4,
+        "name":"Margherita",
+        "price":2000,
+        "imagePath":"margherita.jpg"
+    },
+    {
+        "id":5,
+        "name":"Funghi",
+        "price":2400,
+        "imagePath":"funghi.jpg"
+    }
+]
