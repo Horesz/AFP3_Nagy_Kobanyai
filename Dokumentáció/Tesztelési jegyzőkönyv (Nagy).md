@@ -20,11 +20,12 @@ Következő tesztelésnél a többi funkció kerül vizsgálatra, illetve elemz�
 
 ## Béta teszt
 
-| Vizsgálat                              | Tesztelés időpontja | Elvárás                                                      | Eredmény                    | Hibák                                  |
-| -------------------------------------- | ------------------- | ------------------------------------------------------------ | --------------------------- | -------------------------------------- |
-| Regisztráció és Bejelentkezés          | 2024. október 24.   | A felhasználó regisztrációja és belépésének sikeres teljesítése | Regisztráció és belépés működik | Email visszaigazolás késik      |
-| Fizetési folyamat - kártyás fizetés    | 2024. október 24.   | Kártyaadatok helyes megadása után a tranzakció sikeres       | Tranzakció sikeres           | Tranzakció megerősítő üzenet hiányzik |
-| -------------------------------------- | ------------------- | ------------------------------------------------------------ | ---------------------------- | ------------------------------------- | 
+| Vizsgálat                              | Tesztelés időpontja | Elvárás                                                      | Eredmény                        | Hibák                                  |
+| -------------------------------------- | ------------------- | ------------------------------------------------------------ | ---------------------------     | -------------------------------------- |
+| Regisztráció és Bejelentkezés          | 2024. október 24.   | Regisztráció és belépés sikeres teljesítése                  | Regisztráció és belépés működik | Email visszaigazolás késik             |
+| Fizetési folyamat - kártyás fizetés    | 2024. október 24.   | Kártyaadatok helyes megadása után a tranzakció sikeres       | Tranzakció sikeres              | Tranzakció megerősítő üzenet hiányzik  |
+| Navigációs menü működése               | 2024. október 24.   | Minden menüpont megfelelő oldalra navigál                    | Működik, minden oldal elérhető  | Nincs                                  |
+| -------------------------------------- | ------------------- | ------------------------------------------------------------ | ----------------------------    | -------------------------------------- | 
 
 A Béta teszt során több kisebb hiba merült fel, melyek javításra szorulnak.
 
@@ -32,13 +33,15 @@ A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra e
 
 ## Végleges teszt
 
-| Vizsgálat                              | Tesztelés időpontja | Elvárás                                                       | Eredmény                     | Hibák                    |
-| -------------------------------------- | ------------------- | ------------------------------------------------------------- | ---------------------------- | ------------------------ |
-| Rendelési előzmények megjelenítése     | 2024. október 29.   | Felhasználó rendelési előzményeinek megjelenítése a profilban | Előzmények megjelennek       | Nincs                    |
-| Rendelt pizzák képi megjelenítése      | 2024. október 29.   | A kiválasztott pizzák képe megjelenik a rendelés oldalon      | Megfelelő megjelenítés       | Nincs                    |
-| -------------------------------------- | ------------------- | ------------------------------------------------------------- | ---------------------------- | ------------------------ |
+| Vizsgálat                             | Tesztelés időpontja | Elvárás                                                               | Eredmény                     | Hibák                    |
+| ------------------------------------- | --------------------| --------------------------------------------------------------------- | ---------------------------- | ------------------------ |
+| Rendelési előzmények megjelenítése    | 2024. október 29.   | Felhasználó rendelési előzményeinek megjelenítése a profilban         | Előzmények megjelennek       | Nincs                    |
+| Rendelt pizzák képi megjelenítése     | 2024. október 29.   | A kiválasztott pizzák képe megjelenik a rendelés oldalon              | Megfelelő megjelenítés       | Nincs                    |
+| Szállítási cím megadása               | 2024. október 29.   | Felhasználó szállítási címének megadása és mentése                    | Cím mentve                   | Nincs                    |
+| Kosár tartalmának mentése kijelentkezéskor | 2024. október 29.  | Felhasználó kilépése után a kosár tartalma megmarad a következő bejelentkezésig | Kosár tartalma megmarad      | Nincs      |                    |
+| ------------------------------------- | ------------------- | --------------------------------------------------------------------- | ---------------------------- | ------------------------ |
 
-A Végleges teszt lezajlott, és minden funkció rendesen működik, esztétikailag is megfelelő a program.
+A Végleges teszt során minden vizsgált elem sikeresen teljesített, és a rendszer minden funkciója megfelelően működik.
 
 Átadásra készen áll a megrendelőnek.
 
