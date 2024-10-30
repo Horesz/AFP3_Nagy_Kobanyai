@@ -1,15 +1,15 @@
 [
     {
         "id":1,
-        "name":"Calzone",
+        "name":"BBQ",
         "price":2500,
-        "imagePath":"calzone.jpg"
+        "imagePath":"bbq.jpg"
     },
     {
         "id":2,
-        "name":"Kukoricás",
+        "name":"Bismark",
         "price":2000,
-        "imagePath":"kukoricas.jpg"
+        "imagePath":"bismark.jpg"
     },
     {
         "id":3,

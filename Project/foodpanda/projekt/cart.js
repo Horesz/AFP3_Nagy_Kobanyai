@@ -6,7 +6,7 @@ function addToCart(productHTML){
     osszesitoElem.innerHTML = parseInt(osszesitoElem.innerHTML) + ar;
     if (!kosar.innerHTML.includes(name))
     {
-        kosar.innerHTML += `<div class="kosarElem"><p>${name}</p><p>${ar}</p><p class="darab">1</p><button onclick="subtractFromCart('${name}')">-</button></div>`;
+        kosar.innerHTML += `<div class="kosarElem"><p>${name}</p><p>${ar} Ft</p><p class="darab">1</p>db<button onclick="subtractFromCart('${name}')">-</button></div>`;
         return;
     }
     let kosarElemek = Array.from(kosar.getElementsByClassName('kosarElem'));

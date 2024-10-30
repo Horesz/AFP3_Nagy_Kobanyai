@@ -2,11 +2,12 @@ body {
     margin: 0;
     padding: 60px 0px;
     height: 100vh;
+    background-color: #cac1b1;
 }
 footer, header {
     width: 100%;
     position: fixed;        
-    background: #5dffb6;
+    background: #fae484;
 }
 header {
     top: 0;
@@ -37,7 +38,7 @@ nav li {
 }
 nav li a {
     text-decoration: none;
-    color: #d80d65;
+    color: #e86a10;
     font-weight: bold;
 }
 .termekek{
@@ -46,12 +47,16 @@ nav li a {
     grid-gap: 10px;
     border: 2px solid #888;
     padding: 5px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background-color: #BBB;
 }
 .termek{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 .termek img{
     width: 300px;
@@ -69,35 +74,38 @@ nav li a {
 .termekSzoveg button{
     display:inline-block;
     padding:0.35em 1.2em;
-    border:0.1em solid #d80d65;
-    background: #5dffb6;
+    border:0.1em solid #ffb764;
+    background: #ffd105;
     margin:0 0.3em 0.3em 0;
     border-radius:0.12em;
     box-sizing: border-box;
     text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight:300;
-    color:#d80d65;
+    color:#df5900;
     text-align:center;
     transition: all 0.2s;
     font-size: 14px;
     font-weight: bold;
 }
 .termekSzoveg button:hover{
-    color:#5dffb6;
-    background-color:#d80d65;
+    color:#ffd105;
+    background-color:#cd5b0a;
 }
 .termekSzoveg button:active{
-    background-color:#9c114d;
+    background-color:#98480e;
 }
 .kosar {
-    margin-top: 100px;
-    border: 2px solid #888;
+    position: fixed;
+    top: 150px;
+    right: 50px;
+    border: 2px solid #d4c8a8;
     display: flex;
     flex-direction: column; 
-    background: #5dffb6; 
+    background: #ffd105; 
     overflow: auto;
     height: 300px;
+    width: 300px;
 }
 .kosarElem, .osszesito{
     display: flex;
@@ -106,13 +114,14 @@ nav li a {
     font-weight: bold;
     align-items: center;
     background: white;
-    color: #d80d65;
-    border-bottom: 2px solid #d80d65;
+    color: #cd5b0a;
+    border-bottom: 2px solid #cd5b0a;
     padding: 5px;
 }
 .osszesito{
     justify-content: center;
-    background: #5dffb6; 
+    background: #ffe263; 
+    font-size: 20px;
 }
 .kosarElem *{
     margin-right: 5px;
@@ -123,7 +132,7 @@ nav li a {
 .kosar button{
     height: 40px; 
     background-color: white;
-    color: #d80d65;
+    color: #cd5b0a;
     border: 1px solid #BBB;
     border-radius: 3px;
     width: 50px;

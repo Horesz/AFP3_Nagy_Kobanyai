@@ -8,12 +8,12 @@
         $imagePath=$jsonItem->imagePath;
         
         $responseText = $responseText.
-        "<div class=\"termek\" id=\"calzone\">
-        <img src=\"img/calzone.jpg\" alt=\"Calzone\">
+        "<div class=\"termek\" id=\"bbq\">
+        <img src=\"img/bbq.jpg\" alt=\"BBQ\">
         <div class=\"termekSzoveg\">
-            <p class=\"termekNev\">Calzone</p>
+            <p class=\"termekNev\">BBQ</p>
             <p class=\"ar\">2500</p>
-            <button onclick=\"addToCart(document.getElementById('calzone'))\">+</button>
+            <button onclick=\"addToCart(document.getElementById('bbq'))\">+</button>
         </div>
     </div>";
     }

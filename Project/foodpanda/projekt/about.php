@@ -12,6 +12,5 @@
     <main>
         Rólunk
     </main>
-    <?php include('footer.html'); ?>
 </body>
 </html>
