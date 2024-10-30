@@ -77,10 +77,46 @@ A projekt célja egy Laravel alapú pizzarendelő weboldal fejlesztése, amely t
 
 ## 5. Technológiai követelmények
 
-- **Backend**: Laravel keretrendszer
-- **Frontend**: HTML, CSS, JavaScript (Vue.js vagy React)
-- **Adatbázis**: MySQL
-- **Webszerver**: Apache vagy Nginx
+1. Szerver oldali technológia
+
+    - **Webszerver**
+    - **Operációs rendszer:** Windows
+    - **Backend keretrendszer:** Laravel
+    - **Programozási nyelv:** A backendhez használt nyelv, pl. JavaScript (Node.js), Python, PHP, Ruby, stb.
+
+2. Kliens oldali technológia
+
+    - **Frontend keretrendszerek:**  HTML, CSS és JavaScript
+    - **CSS keretrendszerek** és UI könyvtárak: Bootstrap vagy Tailwind CSS
+
+3. Adatbázis és adattárolás
+
+    - **Adatbázis-kezelő rendszerek:** MySQL<br>
+    - **Adatstruktúra és sémák:** az adatbázis megfelelő eltervezése fontos lesz
+
+4. Biztonság
+
+    - **SSL tanúsítvány:** HTTPS biztosítása az adatok titkosításához.<br>
+    - **Hitelesítés és jogosultságkezelés**
+
+5. Teljesítmény és skálázhatóság
+
+    - **Terheléselosztás:** Ha nagy látogatottságra van szükség, a terheléselosztás biztosítása
+    - **Optimalizált kód és adatbázis:** Teljesítményoptimalizáció a gyorsabb működés érdekében
+
+6. Fejlesztési és üzemeltetési eszközök
+
+    - **Verziókezelés: Git, GitHub**
+    - **Monitoring és logging eszközök:** Kanban
+
+7. Felhasználói élmény és hozzáférhetőség
+
+    - **Reszponzivitás és mobil optimalizáció:** Támogatás mobil eszközök számára, reszponzív tervezési technikákkal.
+
+8. Adatvédelem és megfelelőség
+
+    - **GDPR/CCPA kompatibilitás:** Adatvédelmi szabályoknak való megfelelés.
+    - **Cookie kezelés és adatkezelési szabályzat:** Cookie-k használatának engedélyezése és beállítása, adatvédelmi irányelvek közlése.
 
 ## 6. Fizikai környezet
 
@@ -107,11 +143,12 @@ A projekt célja egy Laravel alapú pizzarendelő weboldal fejlesztése, amely t
 
 ## 9. Karbantartási terv
 
-1. **Adatbázis mentés**: Napi biztonsági mentések.
-2. **Rendszer frissítések**: Laravel és csomagok frissítése.
-3. **Hibajavítás**: Tesztelés és javítás felhasználói visszajelzések alapján.
+A weboldal karbantartásra fog szorulni hogy a jövőben is megfelelően ellássa a feladatát.
+Ezt többféleképpen kellene elérni:
 
-
+1. **Biztonsági mentések**: Az adatbázisról és a weboldalról biztonsági mentéseket kell készíteni egy esetelges technikai probléma miatt például egy megsérült merevlemez vagy egy félresikerült frissítés-
+2. **Rendszer frissítés**: A folyamatos biztonságos müködés érdekében szükséges a lehető legújabb verziójú szofterre építeni a védelmi megoldások és future-proofing miatt. Ez többek között a Laravel frissítésével járhat. A frissítést természetesen jól meggondolva és a fentebb elmített biztonsági mentések mellet kell végrehajtani.
+3. **Hibajavítás**: Valószínűleg a használatba vétel után megfognak jelenni kimaradt dolgok, nem megfelelően funkciónáló események vagy esetleg a felhasználók egy-két funkciót hiányolhatnak a kész rendszerből. Ebben az esetben a hibákat meg kell oldani és az extra funkciókat implementálni ha erre egy mód van.
 
 ## 10. A rendszer célja
 
@@ -262,9 +299,9 @@ A rendszer komponensei:
 
 ## 27. Támogatott eszközök
 
-- **Webböngészők**: Chrome, Firefox, Safari, Edge.
-- **Operációs rendszerek**: Windows, macOS, Linux, iOS, Android.
-
+Ideális esetben akármiféle eszköz amin müködik egy webes böngésző. Windowson és Macen illetve Linuxon mindenképpen támogatva lesz, a mobilos felület lehet kevésbé lesz ideális de arra is figyelni kellene.<br>
+- **Webböngészők**: Chromium alapú böngészőkre kifejezett figyelem és a Mozillára
+- **Operációs rendszerek:** Windows, macOS, Linux, iOS, Android
 ---
 
 Ez a rendszerterv minden szükséges szempontot lefed a Laravel-alapú pizzarendelő weboldal sikeres megvalósításához.
