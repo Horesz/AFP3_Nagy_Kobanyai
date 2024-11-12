@@ -1,120 +1,65 @@
+<!-- resources/views/home.blade.php -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PizzaLand</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-        }
-
-        header nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .btn {
-            background-color: #ff6347;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .products, .reviews {
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .product-item{
-            display: inline-block;
-            margin: 20px;
-            width: 200px;
-            vertical-align: top;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>PizzaLand</h1>
+            <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
             <nav>
                 <a href="#">Kezdőlap</a>
-                <a href="#">Menü</a>
+                <a href="/">Menü</a>
                 <a href="#">Akciók</a>
                 <a href="#">Kapcsolat</a>
-                <a href="{{ route('cart.view') }}">Kosár {{ $cartTotal }} Ft</a>
+                <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár {{ $cartTotal }} Ft</a>
             </nav>
         </div>
     </header>
 
-
     <section class="products">
         <div class="container">
-            <h2>Pizzák</h2>
+            <h1>Pizzák</h1>
             <div class="product-list">
                 @foreach ($pizzas as $pizza)
                     <div class="product-item">
                         <h3>{{ $pizza->nev }}</h3>
                         <p>Ár: {{ $pizza->ar }} Ft</p>
-                        <p>Feltétek: {{ $pizza->feltet }}</p>
-
+                        <p class="product-description">Feltétek: {{ $pizza->feltet }}</p>
+                        <img src="{{ asset('images/' . strtolower(str_replace(' ', '_', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
                         <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
                             @csrf
-                            <button type="submit" class="btn">Kosárhoz adás</button>
+                            <button type="submit" class="btn product-button">Kosárhoz adás</button>
                         </form>
                     </div>
                 @endforeach
             </div>
-
         </div>
     </section>
 
     <section class="reviews">
         <div class="container">
             <h2>Vásárlói Vélemények</h2>
-
             <?php
-
                 if(DB::connection()->getPdo())
                 {
                     echo "Successfully connected to the database =>"
                     .DB::connection()->getDatabaseName();
                 }
-
-                ?>
+            ?>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>Kapcsolat: +36 1 234 5678 | info@pizzeriawebshop.hu</p>
+            <p>Kapcsolat: +36 1 234 5678 | info@kobanyaipizza.hu</p>
             <p>Kövess minket: Facebook | Instagram</p>
-            <p>&copy; 2024 Pizzéria Webshop. Minden jog fenntartva.</p>
+            <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
         </div>
     </footer>
 </body>
