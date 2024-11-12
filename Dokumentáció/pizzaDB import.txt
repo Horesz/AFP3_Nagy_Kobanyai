@@ -1,11 +1,11 @@
-CREATE TABLE pizza (
+CREATE TABLE pizzas (
     id INT PRIMARY KEY,
     nev VARCHAR(255) NOT NULL,
     ar int NOT NULL,
     feltet TEXT
 );
 
-INSERT INTO pizza (id, nev, ar, feltet) VALUES
+INSERT INTO pizzas (id, nev, ar, feltet) VALUES
 (1, 'BBQ', 2900, 'Csirke, BBQ szósz, Hagyma, Sajt'),
 (2, 'Bismark', 2500, 'Tojás, Sajt, Sonka'),
 (3, 'Bolognese', 2700, 'Bolognai ragu, Sajt'),
