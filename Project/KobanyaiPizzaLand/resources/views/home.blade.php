@@ -67,7 +67,7 @@
                 <a href="#">Menü</a>
                 <a href="#">Akciók</a>
                 <a href="#">Kapcsolat</a>
-                <a href="#">Kosár</a>
+                <a href="{{ route('cart.view') }}">Kosár {{ $cartTotal }} Ft</a>
             </nav>
         </div>
     </header>
@@ -82,6 +82,11 @@
                         <h3>{{ $pizza->nev }}</h3>
                         <p>Ár: {{ $pizza->ar }} Ft</p>
                         <p>Feltétek: {{ $pizza->feltet }}</p>
+
+                        <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn">Kosárhoz adás</button>
+                        </form>
                     </div>
                 @endforeach
             </div>
