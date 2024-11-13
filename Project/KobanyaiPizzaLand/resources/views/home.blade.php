@@ -9,18 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
-            <nav>
-                <a href="#">Kezdőlap</a>
-                <a href="/">Menü</a>
-                <a href="#">Akciók</a>
-                <a href="#">Kapcsolat</a>
-                <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár {{ $cartTotal }} Ft</a>
-            </nav>
-        </div>
-    </header>
+
+    @include('header')
 
     <section class="products">
         <div class="container">
@@ -55,12 +45,6 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>Kapcsolat: +36 1 234 5678 | info@kobanyaipizza.hu</p>
-            <p>Kövess minket: Facebook | Instagram</p>
-            <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
-        </div>
-    </footer>
+    @include('footer')
 </body>
 </html>

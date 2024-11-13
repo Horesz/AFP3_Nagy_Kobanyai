@@ -65,7 +65,8 @@
             @endif
         </div>
 
-    <section>
+    </section>
+    @include('footer')
     <script>
         $(document).ready(function() {
             $('.quantity-input').on('change', function() {
@@ -81,7 +82,7 @@
                     },
                     success: function(response) {
                         $('[data-id="' + id + '"] .item-total').text(response.itemTotal + ' Ft');
-                        $('#total-amount').text(response.total + ' Ft');
+                        $('#total-amount').text(response.total);
                     }
                 });
             });
