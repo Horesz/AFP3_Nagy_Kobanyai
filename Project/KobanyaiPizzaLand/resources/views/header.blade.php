@@ -1,8 +1,8 @@
 <header>
     <div class="container">
-        <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
+        <a href="/"> <img src="{{ asset('images/logo.png') }}"  alt="PizzaLand" id="logo"> </a>
         <nav>
-            <a href="#">Kezdőlap</a>
+            <a href="">Kezdőlap</a>
             <a href="/">Menü</a>
             <a href="#">Akciók</a>
             <a href="#">Kapcsolat</a>
