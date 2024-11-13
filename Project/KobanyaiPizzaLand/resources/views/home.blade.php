@@ -5,6 +5,8 @@
         <h1>Üdvözöljük a Köbányai Pizzalandben!</h1>
         <p>Rendeld meg kedvenc pizzáidat egyszerűen és gyorsan!</p>
         <a href="#" class="order-button">Rendelés Most</a>
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('register') }}">Register</a>
     </div>
 
     <div class="pizza-section">
