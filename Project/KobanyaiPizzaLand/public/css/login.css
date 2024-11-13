@@ -1,103 +1,112 @@
-/* Alapvető formázás */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+/* Általános stílusok */
+body, html {
     margin: 0;
-}
-
-/* Formázás a fejlécnek */
-.header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff9e6; 
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    align-items: center; 
+    justify-content: center; 
 }
 
-.header a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 15px;
-}
-
-.header a:hover {
-    color: #ffd700;
-}
-
-.header #cart {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-/* Login Form */
-form {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.register-container {
+    max-width: 500px;  
     width: 100%;
-    max-width: 400px;
+    padding: 25px; 
+    background-color: #fffdf5;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-form div {
+.logo-container {
     margin-bottom: 20px;
 }
 
-form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
-}
-
-form input[type="email"],
-form input[type="password"] {
+#logo {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
+    max-width: 250px;
+    height: auto;
 }
 
-form input[type="checkbox"] {
-    margin-right: 10px;
+/* Form input és gomb stílusok */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-top: 12px;
+    text-align: left;
 }
 
 /* Gombok */
-form .flex.items-center.justify-end .ms-3 {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
+.register-button {
+    background-color: #ff4b4b;
+    color: white;
     border: none;
-    border-radius: 5px;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
-form .flex.items-center.justify-end .ms-3:hover {
-    background-color: #555;
+.register-button:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.05);
 }
 
-/* Linkek a formon belül */
-form a {
-    color: #666;
-    text-decoration: none;
-}
-
-form a:hover {
-    color: #333;
+/* Linkek */
+a {
+    color: #ff4b4b;
     text-decoration: underline;
+    display: block;
+    margin-top: 12px;
 }
 
-/* Hibaüzenetek */
-.mt-2 {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 5px;
+a:hover {
+    color: #ff6b6b;
+}
+
+/* Responsive stílusok */
+@media (max-width: 600px) {
+    .register-container {
+        padding: 20px;
+    }
+
+    #logo {
+        max-width: 200px;
+    }
+
+    .register-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+/* Fade-in animáció */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
