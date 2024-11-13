@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="container">
-          <a href="/">  <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo"> </a>
+            <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
             <nav>
                 <a href="#">Kezdőlap</a>
                 <a href="/">Menü</a>
