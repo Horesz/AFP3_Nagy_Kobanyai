@@ -1,69 +1,183 @@
+
+/* public/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    margin: 0 0;
+    background-color: #fdfcee;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
 header {
-    background-color: #333;
-    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(249,243,189);
+    background: linear-gradient(45deg, rgba(249,243,189,1) 0%, rgba(255,215,70,1) 100%);
+    color: white;
+    padding: 10px 0;
 }
 
 header nav a {
-    color: #fff;
-    font-size: 1.5em;
+    color: rgb(18, 18, 18);
+    margin: 0 20px;
     text-decoration: none;
+    font-size: 130%;
+    font-weight: bold;
+    transition: .3s;
+    padding: 10px;
 }
-
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+header nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-header nav ul li {
-    margin-left: 15px;
+header nav a:hover {
+    background-color: antiquewhite;
+    transition: .3s;
+    padding: 10px;
+    border-radius: 15px;
+    scale: 1.1;
 }
-
-header nav ul li a {
-    color: #fff;
+#cart {
+    margin-left: auto; /* Push the cart link to the right */
+    color: rgb(148, 0, 0);
     text-decoration: none;
+    font-weight: bold;
+    background-color: antiquewhite;
+    padding: 8px;
+    border-radius: 10px;
+}
+#cart:hover {
+    background-color: rgb(246, 217, 183);
+    transition: .3s;
 }
 
-.hero-section {
-    text-align: center;
-    padding: 50px;
-    background: #ffe3a1;
-}
-
-.hero-section h1 {
-    font-size: 2.5em;
-    color: #d35400;
-}
-
-.order-button {
-    background-color: #e67e22;
-    color: #fff;
+.btn {
+    background-color: #ff6347;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    transition: .3s;
 }
 
-.pizza-section {
-    padding: 20px;
+.btn:hover {
+    background-color: #c33400;
+    transition: .3s;
+    cursor: pointer;
 }
 
-.pizza-section h2 {
+.products, .reviews {
+    padding: 40px 0;
     text-align: center;
 }
 
-.pizza-list {
-    display: flex;
-    justify-content: space-around;
+.product-item {
+    display: inline-block;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    height: 405px;
+    border: 3px solid #630f00;
+    box-sizing: border-box;
+    vertical-align: top;
+    border-radius: 20px;
+    background: rgb(255,244,147);
+    background: linear-gradient(180deg, rgba(255,244,147,1) 0%, rgba(255,213,58,1) 100%);
+    font-size: larger;
+    box-shadow: 0px 0px 15px rgb(46, 46, 46);
+}
+.product-item img{
+    border-radius: 20px;
 }
 
-.pizza-item {
+.product-description {
+    height: 50px;
+    overflow: hidden;
+}
+
+.product-button {
+    margin-top: 10px;
     text-align: center;
-    width: 30%;
+    font-weight: bold;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+.products h1{
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#logo{
+    max-width: 200px;
+}
+
+
+/* Cart */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+th {
+    background-color: #ffd767;
+    color: #000000;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.total {
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+.btn-back, .btn-remove {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn-back {
+    background-color: #333;
+}
+.btn-remove {
+    background-color: #ff6347;
+}
+.btn-back:hover {
+    background-color: #555;
+}
+.btn-remove:hover {
+    background-color: #ff3333;
 }
