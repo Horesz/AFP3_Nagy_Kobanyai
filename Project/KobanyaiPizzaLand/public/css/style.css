@@ -1,3 +1,4 @@
+
 /* public/css/style.css */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -206,53 +207,4 @@ tr:nth-child(even) {
 
 .btn-remove:hover {
     background-color: #ff3333;
-}
-
-/* Responsive Styles */
-@media (max-width: 1200px) {
-    .product-item {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    header nav {
-        flex-direction: column;
-    }
-
-    header nav a {
-        margin: 10px 0;
-    }
-
-    .product-item {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    header #logo {
-        width: 100px;
-    }
-
-    header nav a {
-        padding: 5px;
-    }
-
-    .container {
-        width: 90%;
-    }
-
-    .product-item {
-        width: 100%;
-    }
-
-    .product-item img {
-        max-width: 100%;
-        height: auto;
-        max-height: 150px; /* Adjust the maximum height for smaller screens */
-    }
 }
