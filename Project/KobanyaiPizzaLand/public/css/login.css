@@ -1,55 +1,103 @@
+/* Alapvető formázás */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
 }
 
-.login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    text-align: center;
+/* Formázás a fejlécnek */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
+.header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.header a:hover {
+    color: #ffd700;
+}
+
+.header #cart {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Login Form */
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+form div {
     margin-bottom: 20px;
 }
 
-label {
+form label {
+    font-weight: bold;
     display: block;
-    margin: 10px 0 5px;
+    margin-bottom: 8px;
 }
 
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-}
-
-button {
+form input[type="email"],
+form input[type="password"] {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Gombok */
+form .flex.items-center.justify-end .ms-3 {
+    padding: 10px 20px;
+    background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #218838;
+form .flex.items-center.justify-end .ms-3:hover {
+    background-color: #555;
 }
 
-.error-messages {
-    color: #d9534f;
-    margin-top: 10px;
+/* Linkek a formon belül */
+form a {
+    color: #666;
+    text-decoration: none;
+}
+
+form a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Hibaüzenetek */
+.mt-2 {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
 }
