@@ -6,7 +6,7 @@
             <a href="/">Menü</a>
             <a href="#">Akciók</a>
             <a href="#">Kapcsolat</a>
-            <a href="{{ route('login') }}">login</a>
+           
             <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár {{ $cartTotal }} Ft</a>
             @if (Route::has('login'))
             @auth
