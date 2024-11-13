@@ -1,18 +1,3 @@
-@extends('layouts.app')
-@section('content')
-    <header>
-        <div class="container">
-            <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
-            <nav>
-                <a href="#">Kezdőlap</a>
-                <a href="/">Menü</a>
-                <a href="#">Akciók</a>
-                <a href="#">Kapcsolat</a>
-                <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár {{ $cartTotal }} Ft</a>
-            </nav>
-        </div>
-    </header>
-
     <section class="products">
         <!-- Itt a main ágból a termékek listázása -->
         <div class="container">
@@ -33,12 +18,19 @@
             </div>
         </div>
     </section>
-
-    <footer>
+    <section class="reviews">
         <div class="container">
-            <p>Kapcsolat: +36 1 234 5678 | info@kobanyaipizza.hu</p>
-            <p>Kövess minket: Facebook | Instagram</p>
-            <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
+            <h2>Vásárlói Vélemények</h2>
+            <?php
+                if(DB::connection()->getPdo())
+                {
+                    echo "Successfully connected to the database =>"
+                    .DB::connection()->getDatabaseName();
+                }
+            ?>
         </div>
-    </footer>
-@endsection
+    </section>
+
+    @include('footer')
+</body>
+</html>

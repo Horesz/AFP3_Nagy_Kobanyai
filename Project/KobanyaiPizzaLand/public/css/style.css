@@ -1,16 +1,18 @@
 
 /* public/css/style.css */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-body {
+
+body,html {
     font-family: "Sour Gummy", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-variation-settings:
-    "wdth" 100;
+    font-variation-settings: "wdth" 100;
     margin: 0 0;
     background-color: #fdfcee;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
 
 .container {
     width: 80%;
@@ -36,11 +38,13 @@ header nav a {
     transition: .3s;
     padding: 10px;
 }
+
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 header nav a:hover {
     background-color: antiquewhite;
     transition: .3s;
@@ -48,6 +52,7 @@ header nav a:hover {
     border-radius: 15px;
     scale: 1.1;
 }
+
 #cart {
     margin-left: auto; /* Push the cart link to the right */
     color: rgb(148, 0, 0);
@@ -57,6 +62,7 @@ header nav a:hover {
     padding: 8px;
     border-radius: 10px;
 }
+
 #cart:hover {
     background-color: rgb(246, 217, 183);
     transition: .3s;
@@ -88,7 +94,7 @@ header nav a:hover {
     padding-left: 10px;
     padding-right: 10px;
     width: 250px;
-    height: 405px;
+    height: auto;
     border: 3px solid #630f00;
     box-sizing: border-box;
     vertical-align: top;
@@ -98,8 +104,12 @@ header nav a:hover {
     font-size: larger;
     box-shadow: 0px 0px 15px rgb(46, 46, 46);
 }
-.product-item img{
+
+.product-item img {
     border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; /* Set a maximum height for the images */
 }
 
 .product-description {
@@ -109,15 +119,12 @@ header nav a:hover {
 
 .product-button {
     margin-top: 10px;
+    margin-bottom: 20px;
     text-align: center;
     font-weight: bold;
 }
 
-.product-item img {
-    max-width: 100%;
-    height: auto;
-}
-.products h1{
+.products h1 {
     font-size: 50px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -128,39 +135,54 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+    width: 100%;
+    margin-top: auto;
+}
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-#logo{
+
+#logo {
     max-width: 200px;
 }
-
 
 /* Cart */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+
 table, th, td {
     border: 1px solid #ddd;
 }
+
 th, td {
     padding: 15px;
     text-align: center;
 }
+
 th {
     background-color: #ffd767;
     color: #000000;
 }
+
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+
 .total {
     text-align: right;
     font-size: 25px;
     font-weight: bold;
     padding-top: 20px;
 }
+
 .btn-back, .btn-remove {
     display: inline-block;
     margin-top: 10px;
@@ -169,15 +191,20 @@ tr:nth-child(even) {
     text-decoration: none;
     border-radius: 5px;
 }
+
 .btn-back {
     background-color: #333;
+    margin-bottom: 100px;
 }
+
 .btn-remove {
     background-color: #ff6347;
 }
+
 .btn-back:hover {
     background-color: #555;
 }
+
 .btn-remove:hover {
     background-color: #ff3333;
 }
