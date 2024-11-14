@@ -222,6 +222,45 @@ tr:nth-child(even) {
     background-color: #ff3333;
 }
 
+
+/* Főoldal */
+.welcome {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #ffffff;
+}
+
+.welcome h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.welcome p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #6c757d;
+}
+
+.btn.explore-button {
+    background-color: #ffd767;;
+    color: #3f0000;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+.btn.explore-button:hover {
+    background-color: #ebad00;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+}
+
+
+
 /* Reszponzív stílusok */
 @media (max-width: 1200px) {
     .product-item {
