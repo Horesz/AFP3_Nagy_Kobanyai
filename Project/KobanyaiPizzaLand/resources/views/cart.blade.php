@@ -1,15 +1,18 @@
+<!-- resources/views/cart.blade.php -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PizzaLand</title>
+    <title>PizzaLand - Kosár</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
 </head>
 <body>
+
     @include('header')
+
     <section>
         <div class="container">
             <h2>Kosár tartalma</h2>
@@ -45,15 +48,17 @@
                     </tbody>
                 </table>
 
-                <p class="total">Teljes összeg: <span id="total-amount">{{ array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart)) }} Ft</span></p>
-
-                <a href="/" class="btn-back">Vissza a főoldalra</a>
+                <p class="total">Teljes összeg: <span id="total-amount">{{ $cartTotal }} Ft</span></p>
+                <button class="btn-payment"><a href="#">Fizetés</a></button><br>
+                <button class="btn-back"><a href="/">Vissza a főoldalra</a></button>
             @else
                 <p class="empty-cart">A kosár üres.</p>
             @endif
         </div>
     </section>
+
     @include('footer')
+
     <script>
         $(document).ready(function() {
             $('.quantity-input').on('change', function() {

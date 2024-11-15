@@ -214,30 +214,34 @@ tr:nth-child(even) {
 }
 
 .btn-back, .btn-remove {
+    font-family: 'Sour Gummy', sans-serif;
     display: inline-block;
     margin-top: 10px;
     padding: 5px 10px;
-    color: #fff;
-    text-decoration: none;
     border-radius: 20px;
 }
 
 .btn-back {
-    background-color: #333;
+    background-color: #1b1b1b;
     margin-bottom: 100px;
     padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 100px;
+}
+.btn-back a{
+    text-decoration: none;
+    color: #fff;
+    font-size: larger;
 }
 
 .btn-remove {
     background-color: #ff6347;
 }
 
-.btn-back:hover {
-    background-color: #555;
-}
 
 .btn-remove:hover {
-    background-color: #ff3333;
+    background-color: #c33400;
 }
 form input[type="text"] {
     width: 30%;
@@ -276,7 +280,29 @@ form #pizzakeres_but[type="submit"] {
 form #pizzakeres_but[type="submit"]:hover {
     background-color: #ebad00;
 }
+.btn-payment {
+    background-color: #ff6347;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    margin-left: auto;
+}
 
+.btn-payment a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-payment:hover {
+    background-color: #c33400;
+}
 
 
 
@@ -287,7 +313,6 @@ form #pizzakeres_but[type="submit"]:hover {
 .welcome {
     text-align: center;
     padding: 100px 20px;
-    background-color: #ffffff;
 }
 
 .welcome h1 {
