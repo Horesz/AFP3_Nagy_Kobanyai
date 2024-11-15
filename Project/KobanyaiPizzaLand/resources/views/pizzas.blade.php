@@ -1,4 +1,4 @@
-<!-- resources/views/home.blade.php -->
+<!-- resources/views/pizzas.blade.php -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -13,28 +13,34 @@
 
     @include('header')
     
-
     <section class="products">
         <div class="container">
             <h1>Pizzák</h1>
+            <form action="{{ route('pizzas.view') }}" method="GET">
+                <input id="pizzakeres" type="text" name="query" placeholder="Keresés a pizzák között..." value="{{ request()->input('query') }}">
+                <button id="pizzakeres_but" type="submit">Keresés</button>
+            </form>
             <div class="product-list">
-                @foreach ($pizzas as $pizza)
-                    <div class="product-item">
-                        <h3>{{ $pizza->nev }}</h3>
-                        <p>Ár: {{ $pizza->ar }} Ft</p>
-                        <p class="product-description">Feltétek: {{ $pizza->feltet }}</p>
-                        <img src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
-                        <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn product-button">Kosárhoz adás</button>
-                        </form>
-                    </div>
-                @endforeach
+                @if($pizzas->isEmpty())
+                    <p>Nincs találat a keresésre.</p>
+                @else
+                    @foreach ($pizzas as $pizza)
+                        <div class="product-item">
+                            <h3>{{ $pizza->nev }}</h3>
+                            <p>Ár: {{ $pizza->ar }} Ft</p>
+                            <p class="product-description">Feltétek: {{ $pizza->feltet }}</p>
+                            <img src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
+                            <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn product-button">Kosárhoz adás</button>
+                            </form>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
     
-
     <section class="reviews">
         <div class="container">
             <h2>Vásárlói Vélemények</h2>

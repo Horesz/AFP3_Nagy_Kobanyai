@@ -7,7 +7,7 @@ body,html {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     margin: 0 0;
-    background-color: #fdfcee;
+    background-color: #fff9e6; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -53,7 +53,7 @@ header nav a:hover {
 }
 
 #cart {
-    margin-left: auto; /* Push the cart link to the right */
+    margin-left: auto;
     color: rgb(148, 0, 0);
     text-decoration: none;
     font-weight: bold;
@@ -72,7 +72,7 @@ header nav a:hover {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: .3s;
 }
 
@@ -108,7 +108,7 @@ header nav a:hover {
     border-radius: 20px;
     max-width: 100%;
     height: auto;
-    max-height: 200px; /* Set a maximum height for the images */
+    max-height: 200px;
 }
 
 .product-description {
@@ -121,6 +121,9 @@ header nav a:hover {
     margin-bottom: 20px;
     text-align: center;
     font-weight: bold;
+    border: 0;
+    font-family: "Sour Gummy", sans-serif;
+    letter-spacing: 1px;
 }
 
 .products h1 {
@@ -152,7 +155,7 @@ footer {
     color: #630f00;
     background-color: #e1c98574;
     border-radius: 20px;
-    margin-left: 10px; /* Add margin to separate from other elements */
+    margin-left: 10px; 
     text-decoration: none;
     padding: 8px;
     font-weight: bold;
@@ -162,6 +165,13 @@ footer {
     background-color: #d4b77b;
     transition: .3s;
 }
+
+
+
+
+
+
+
 
 /* Cart */
 table {
@@ -173,6 +183,7 @@ table {
 
 table, th, td {
     border: 1px solid #ddd;
+    
 }
 
 th, td {
@@ -188,6 +199,12 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+#cart_input{
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: larger;
+}
 
 .total {
     text-align: right;
@@ -202,12 +219,13 @@ tr:nth-child(even) {
     padding: 5px 10px;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 .btn-back {
     background-color: #333;
     margin-bottom: 100px;
+    padding: 15px;
 }
 
 .btn-remove {
@@ -221,6 +239,48 @@ tr:nth-child(even) {
 .btn-remove:hover {
     background-color: #ff3333;
 }
+form input[type="text"] {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 1px solid #c7b085;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    background-color: #ffefc5;
+    margin-bottom: 20px;
+    font-family: "Sour Gummy", sans-serif;
+}
+form input[type="text"]:focus {
+    width: 35%;
+    padding: 12px;
+    border-color: #ffc40080;
+    box-shadow: 0 0 10px 5px #ffc40080;
+    outline: none;
+}
+
+form #pizzakeres_but[type="submit"] {
+    background-color: #ffd767;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+form #pizzakeres_but[type="submit"]:hover {
+    background-color: #ebad00;
+}
+
+
+
+
+
 
 
 /* Főoldal */
@@ -256,8 +316,12 @@ tr:nth-child(even) {
     background-color: #ebad00;
     color: #ffffff;
     letter-spacing: 1.5px;
-    box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+    box-shadow: 0 0 15px #ffc800b3;
 }
+thead{
+    font-size: larger;
+}
+
 
 
 

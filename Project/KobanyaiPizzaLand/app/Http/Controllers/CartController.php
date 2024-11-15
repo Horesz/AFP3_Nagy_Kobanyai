@@ -7,6 +7,18 @@ use App\Models\Pizza;
 
 class CartController extends Controller
 {
+    public function viewCart()
+    {
+        $cart = session()->get('cart', []);
+
+        $total = 0;
+        foreach ($cart as $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
+
+        return view('cart', ['cart' => $cart, 'cartTotal' => $total]);
+    }
+
     public function addToCart($id)
     {
         $pizza = Pizza::find($id);
@@ -30,13 +42,6 @@ class CartController extends Controller
         session()->put('cart', $cart);
 
         return redirect()->route('pizzas.view')->with('success', 'Pizza added to cart.');
-    }
-
-    public function viewCart()
-    {
-        $cart = session()->get('cart', []);
-
-        return view('cart', ['cart' => $cart]);
     }
 
 

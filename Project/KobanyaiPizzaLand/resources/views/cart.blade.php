@@ -9,32 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-          <a href="/">  <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo"> </a>
-            <nav>
-                <a href="{{ route('home.view') }}">Kezdőlap</a>
-                <a href="{{ route('pizzas.view') }}">Menü</a>
-                <a href="#">Akciók</a>
-                <a href="#">Kapcsolat</a>
-                @if (Route::has('login'))
-                    @auth
-                        <li><a href="{{ url('/home') }}">Dashboard</a></li>
-                        <li>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit">Logout</button>
-                            </form>
-                        </li>
-                    @else
-                        <a class="log_reg" href="{{ route('login') }}">Login</a>
-                        <a class="log_reg" href="{{ route('register') }}">Register</a>
-                    @endauth
-                @endif
-                <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár</a>
-            </nav>
-        </div>
-    </header>
+    @include('header')
     <section>
         <div class="container">
             <h2>Kosár tartalma</h2>
@@ -56,7 +31,7 @@
                                 <td>{{ $item['name'] }}</td>
                                 <td>{{ $item['price'] }} Ft</td>
                                 <td>
-                                    <input type="number" name="quantity" value="{{ $item['quantity'] }}" min="1" style="width: 50px;" class="quantity-input">
+                                    <input type="number" id="cart_input" name="quantity" value="{{ $item['quantity'] }}" min="1" style="width: 50px;" class="quantity-input">
                                 </td>
                                 <td class="item-total">{{ $item['price'] * $item['quantity'] }} Ft</td>
                                 <td>

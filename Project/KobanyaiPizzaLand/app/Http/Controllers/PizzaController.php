@@ -20,9 +20,15 @@ class PizzaController extends Controller
 
             return view('home', ['pizzas' => $pizzas, 'cartTotal' => $total]);
         }
-        public function view()
+        public function view(Request $request)
         {
-            $pizzas = Pizza::all();
+            $query = $request->input('query');
+            if ($query) {
+                $pizzas = Pizza::where('nev', 'LIKE', "%{$query}%")->get();
+            } else {
+                $pizzas = Pizza::all();
+            }
+    
             $total = 0;
             if (session()->has('cart')) {
                 foreach (session('cart') as $item) {
@@ -32,5 +38,4 @@ class PizzaController extends Controller
     
             return view('pizzas', ['pizzas' => $pizzas, 'cartTotal' => $total]);
         }
-    
 }
