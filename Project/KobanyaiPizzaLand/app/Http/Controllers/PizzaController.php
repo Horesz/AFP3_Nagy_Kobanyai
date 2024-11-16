@@ -28,14 +28,20 @@ class PizzaController extends Controller
             } else {
                 $pizzas = Pizza::all();
             }
-    
+
             $total = 0;
             if (session()->has('cart')) {
                 foreach (session('cart') as $item) {
                     $total += $item['price'] * $item['quantity'];
                 }
             }
-    
+
             return view('pizzas', ['pizzas' => $pizzas, 'cartTotal' => $total]);
         }
+
+        public function show($id)
+    {
+        $pizza = Pizza::findOrFail($id);
+        return response()->json($pizza);
+    }
 }

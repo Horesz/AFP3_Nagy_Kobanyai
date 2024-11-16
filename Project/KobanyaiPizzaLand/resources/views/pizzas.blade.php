@@ -12,7 +12,7 @@
 <body>
 
     @include('header')
-    
+
     <section class="products">
         <div class="container">
             <h1>Pizzák</h1>
@@ -25,11 +25,11 @@
                     <p>Nincs találat a keresésre.</p>
                 @else
                     @foreach ($pizzas as $pizza)
-                        <div class="product-item">
+                        <div class="product-item" data-id="{{ $pizza->id }}">
                             <h3>{{ $pizza->nev }}</h3>
                             <p>Ár: {{ $pizza->ar }} Ft</p>
                             <p class="product-description">Feltétek: {{ $pizza->feltet }}</p>
-                            <img src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
+                            <img class="pizza-image" src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
                             <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn product-button">Kosárhoz adás</button>
@@ -40,7 +40,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="reviews">
         <div class="container">
             <h2>Vásárlói Vélemények</h2>
@@ -54,6 +54,55 @@
         </div>
     </section>
 
+    <div id="pizza-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="pizza-details">
+                <!-- A pizza részletei itt jelennek meg -->
+            </div>
+        </div>
+    </div>
+
     @include('footer')
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pizzaImages = document.querySelectorAll('.pizza-image');
+            const modal = document.getElementById('pizza-details-modal');
+            const closeButton = document.querySelector('.close-button');
+            const pizzaDetails = document.getElementById('pizza-details');
+
+            pizzaImages.forEach(image => {
+                image.addEventListener('click', function () {
+                    const pizzaId = this.closest('.product-item').getAttribute('data-id');
+                    fetch(`/pizzas/${pizzaId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            pizzaDetails.innerHTML = `
+                                <h1>${data.nev}</h1>
+                                <p>Ár: ${data.ar} Ft</p>
+                                <p>Feltétek: ${data.feltet}</p>
+                                <img src="/images/${data.nev.toLowerCase().replace(/ /g, '')}.jpg" alt="${data.nev}">
+                                <form action="/add-to-cart/${data.id}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary">Kosárhoz adás</button>
+                                </form>
+                            `;
+                            modal.style.display = 'block';
+                        });
+                });
+            });
+
+            closeButton.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

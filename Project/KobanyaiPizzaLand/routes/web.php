@@ -16,6 +16,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
 Route::get('/pizzas', [PizzaController::class, 'view'])->name('pizzas.view');
 
+Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
+
 Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 
