@@ -47,22 +47,23 @@ class CartController extends Controller
 
 
     public function updateQuantity(Request $request, $id)
-    {
-        $cart = session()->get('cart', []);
+{
+    $cart = session()->get('cart', []);
 
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity'] = $request->quantity;
-            session()->put('cart', $cart);
-        }
-
-        $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
-        $itemTotal = $cart[$id]['price'] * $cart[$id]['quantity'];
-
-        return response()->json([
-            'total' => $total,
-            'itemTotal' => $itemTotal
-        ]);
+    if (isset($cart[$id])) {
+        $cart[$id]['quantity'] = $request->quantity;
+        session()->put('cart', $cart);
     }
+
+    // Számolja ki az új teljes összeget
+    $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
+    $itemTotal = $cart[$id]['price'] * $cart[$id]['quantity'];
+
+    return response()->json([
+        'total' => $total,
+        'itemTotal' => $itemTotal
+    ]);
+}
 
 
 
