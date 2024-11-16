@@ -7,7 +7,7 @@ body,html {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     margin: 0 0;
-    background-color: #fff9e6; 
+    background-color: #fff9e6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -26,6 +26,55 @@ header {
     background: linear-gradient(45deg, rgba(249,243,189,1) 0%, rgba(255,215,70,1) 100%);
     color: white;
     padding: 10px 0;
+}
+
+.welcome {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.welcome h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px auto; /* Add margin-bottom to create space for the button */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-container img.fade-out {
+    opacity: 0;
+}
+
+.explore-button {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    display: block;
+    text-align: center;
+    margin: 20px auto 0 auto;
+    max-width: 200px;
 }
 
 header nav a {
@@ -155,7 +204,7 @@ footer {
     color: #630f00;
     background-color: #e1c98574;
     border-radius: 20px;
-    margin-left: 10px; 
+    margin-left: 10px;
     text-decoration: none;
     padding: 8px;
     font-weight: bold;
@@ -183,7 +232,7 @@ table {
 
 table, th, td {
     border: 1px solid #ddd;
-    
+
 }
 
 th, td {

@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 // routes/web.php
 
-
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
 Route::get('/pizzas', [PizzaController::class, 'view'])->name('pizzas.view');
 
