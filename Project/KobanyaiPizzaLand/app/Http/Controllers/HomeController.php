@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pizza;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,12 @@ class HomeController extends Controller
             }
         }
 
-        return view('home', ['pizzas' => $pizzas, 'cartTotal' => $total]);
+        $images = File::files(public_path('images'));
+        $randomImages = collect($images)->random(10)->map(function ($file) {
+            return 'images/' . $file->getFilename();
+        });
+
+        return view('home', ['pizzas' => $pizzas, 'cartTotal' => $total,'randomImages' => $randomImages]);
     }
 
     public function view()

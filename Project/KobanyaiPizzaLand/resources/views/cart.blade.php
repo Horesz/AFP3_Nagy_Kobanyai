@@ -59,6 +59,7 @@
 
     @include('footer')
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.quantity-input').on('change', function() {
@@ -73,7 +74,9 @@
                         quantity: quantity
                     },
                     success: function(response) {
+                        // Frissítjük az adott tétel összegét
                         $('[data-id="' + id + '"] .item-total').text(response.itemTotal + ' Ft');
+                        // Frissítjük a teljes összeget
                         $('#total-amount').text(response.total + ' Ft');
                     }
                 });
