@@ -1,9 +1,10 @@
+<!-- resources/views/header.blade.php -->
 <header>
     <div class="container">
-        <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
+        <a href="/"> <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo"> </a>
         <nav>
-            <a href="#">Kezdőlap</a>
-            <a href="/">Menü</a>
+            <a href="{{ route('home.view') }}">Kezdőlap</a>
+            <a href="{{ route('pizzas.view') }}">Pizzák</a>
             <a href="#">Akciók</a>
             <a href="#">Kapcsolat</a>
 
