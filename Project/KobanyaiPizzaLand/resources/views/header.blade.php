@@ -18,8 +18,8 @@
                         </form>
                     </li>
                 @else
-                    <a class="log_reg" href="{{ route('login') }}">Login</a>
-                    <a class="log_reg" href="{{ route('register') }}">Register</a>
+                    <a class="log_reg" href="{{ route('login') }}">Belépés</a>
+                    <a class="log_reg" href="{{ route('register') }}">Regisztráció</a>
                 @endauth
             @endif
             <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár {{ $cartTotal ?? 0 }} Ft</a>
