@@ -4,7 +4,13 @@
 <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-<x-guest-layout>
+<div class="register-container">
+    <div class="logo-container">
+        <a href="/" class="img">
+            <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
+        </a>
+    </div>
+
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
         {{ __('Elfelejtette a jelszavát? Semmi gond. Csak adja meg az email-címét, és elküldünk Önnek egy jelszó-visszaállítási linket, amely lehetővé teszi egy új jelszó beállítását.') }}
     </div>
@@ -23,10 +29,11 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
+            <x-primary-button class="x-primary-button">
                 {{ __('Jelszó-visszaállítási link küldése') }}
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</div>
+
 @include('footer')
