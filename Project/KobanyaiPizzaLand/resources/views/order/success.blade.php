@@ -9,9 +9,6 @@
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
 </head>
 <body>
-
-    @include('header')
-
     @extends('layouts.app')
 
     @section('content')
@@ -22,8 +19,6 @@
         </div>
     </section>
     @endsection
-
-    @include('footer')
 
 </body>
 </html>

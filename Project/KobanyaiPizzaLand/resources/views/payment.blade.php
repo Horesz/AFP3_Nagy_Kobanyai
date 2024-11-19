@@ -10,8 +10,6 @@
 </head>
 <body>
 
-    @include('header')
-
     @extends('layouts.app')
 
 @section('content')
@@ -50,7 +48,6 @@
 </section>
 @endsection
 
-@include('footer')
 
 </body>
 </html>
