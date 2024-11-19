@@ -16,7 +16,7 @@
     <section class="products">
         <div class="container">
             <h1>Pizzák</h1>
-            <form action="{{ route('pizzas.view') }}" method="GET">
+            <form action="{{ route('pizzas.view') }}" method="GET" class="search-form">
                 <input id="pizzakeres" type="text" name="query" placeholder="Keresés a pizzák között..." value="{{ request()->input('query') }}">
                 <button id="pizzakeres_but" type="submit">Keresés</button>
             </form>
@@ -25,15 +25,16 @@
                     <p>Nincs találat a keresésre.</p>
                 @else
                     @foreach ($pizzas as $pizza)
-                        <div class="product-item" data-id="{{ $pizza->id }}">
+                        <div class="product-item">
                             <h3>{{ $pizza->nev }}</h3>
                             <p>Ár: {{ $pizza->ar }} Ft</p>
                             <p class="product-description">Feltétek: {{ $pizza->feltet }}</p>
-                            <img class="pizza-image" src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
+                            <img src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
                             <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn product-button">Kosárhoz adás</button>
                             </form>
+                            <button class="btn extra-button" onclick="showPopup({{ $pizza->id }}, {{ $pizza->ar }})">Extra</button>
                         </div>
                     @endforeach
                 @endif
@@ -41,68 +42,78 @@
         </div>
     </section>
 
-    <section class="reviews">
-        <div class="container">
-            <h2>Vásárlói Vélemények</h2>
-            <?php
-                if(DB::connection()->getPdo())
-                {
-                    echo "Successfully connected to the database =>"
-                    .DB::connection()->getDatabaseName();
-                }
-            ?>
-        </div>
-    </section>
-
-    <div id="pizza-details-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <div id="pizza-details">
-                <!-- A pizza részletei itt jelennek meg -->
-            </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="hidePopup()">&times;</span>
+            <h3 id="popup-title"></h3>
+            <img id="popup-image" src="" alt="Pizza" class="popup-image">
+            <p id="popup-description"></p>
+            <h4>Extra feltétek:</h4>
+            <form id="extras-form">
+                <label><input type="checkbox" name="extra" value="Sajt" data-price="200" onchange="updateTotal()"> Sajt (+200 Ft)</label><br>
+                <label><input type="checkbox" name="extra" value="Sonka" data-price="300" onchange="updateTotal()"> Sonka (+300 Ft)</label><br>
+                <label><input type="checkbox" name="extra" value="Gomba" data-price="150" onchange="updateTotal()"> Gomba (+150 Ft)</label><br>
+                <!-- Add more extras as needed -->
+            </form>
+            <p><b>Összeg: <span id="total-price"></span> Ft</b></p>
+            <button class="btn add-to-cart-button" onclick="addToCartWithExtras()">Kosárhoz adás extrákkal</button>
         </div>
     </div>
 
     @include('footer')
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const pizzaImages = document.querySelectorAll('.pizza-image');
-            const modal = document.getElementById('pizza-details-modal');
-            const closeButton = document.querySelector('.close-button');
-            const pizzaDetails = document.getElementById('pizza-details');
+        let basePrice = 0;
 
-            pizzaImages.forEach(image => {
-                image.addEventListener('click', function () {
-                    const pizzaId = this.closest('.product-item').getAttribute('data-id');
-                    fetch(`/pizzas/${pizzaId}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            pizzaDetails.innerHTML = `
-                                <h1>${data.nev}</h1>
-                                <p>Ár: ${data.ar} Ft</p>
-                                <p>Feltétek: ${data.feltet}</p>
-                                <img src="/images/${data.nev.toLowerCase().replace(/ /g, '')}.jpg" alt="${data.nev}">
-                                <form action="/add-to-cart/${data.id}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="btn btn-primary">Kosárhoz adás</button>
-                                </form>
-                            `;
-                            modal.style.display = 'block';
-                        });
+        function clearSearch() {
+            document.getElementById('pizzakeres').value = '';
+        }
+
+        function showPopup(pizzaId, pizzaPrice) {
+            // Get pizza details
+            var pizza = @json($pizzas).find(p => p.id === pizzaId);
+            document.getElementById('popup-title').innerText = pizza.nev;
+            document.getElementById('popup-image').src = "{{ asset('images/') }}/" + pizza.nev.toLowerCase().replace(/ /g, '') + ".jpg";
+            document.getElementById('popup-description').innerText = pizza.feltet;
+
+            // Set base price
+            basePrice = pizzaPrice;
+            document.getElementById('total-price').innerText = basePrice;
+
+            // Show popup
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function updateTotal() {
+            let total = basePrice;
+            const checkboxes = document.querySelectorAll('#extras-form input[type="checkbox"]:checked');
+            checkboxes.forEach(function(checkbox) {
+                total += parseInt(checkbox.getAttribute('data-price'));
+            });
+            document.getElementById('total-price').innerText = total;
+        }
+
+        function addToCartWithExtras() {
+            // Get selected extras
+            var extras = [];
+            var checkboxes = document.querySelectorAll('#extras-form input[type="checkbox"]:checked');
+            checkboxes.forEach(function(checkbox) {
+                extras.push({
+                    name: checkbox.value,
+                    price: checkbox.getAttribute('data-price')
                 });
             });
 
-            closeButton.addEventListener('click', function () {
-                modal.style.display = 'none';
-            });
+            // Add to cart logic here
+            // ...
 
-            window.addEventListener('click', function (event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
+            // Hide popup
+            hidePopup();
+        }
     </script>
 </body>
 </html>
