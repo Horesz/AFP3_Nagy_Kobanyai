@@ -54,8 +54,4 @@
         </div>
     </form>
 </div>
-
-<?php
-    @include('profile.footer')
-
-?>
+    @include('footer')
