@@ -1,12 +1,12 @@
 <!-- resources/views/header.blade.php -->
 <header>
     <div class="container">
-        <a href="/"> <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo"> </a>
+        <a href="/"> <img src="{{ asset('images/logo/logo.png') }}" alt="PizzaLand" id="logo"> </a>
         <nav>
             <a href="{{ route('home.view') }}">Kezdőlap</a>
             <a href="{{ route('pizzas.view') }}">Pizzák</a>
-            <a href="#">Akciók</a>
-            <a href="#">Kapcsolat</a>
+            <a href="{{ route('specialoffers.index') }}">Akciók</a>
+            <a href="{{ route('contact.index') }}">Kapcsolat</a>
 
             @if (Route::has('login'))
                 @auth
