@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller
 {
     public function show() {
-        return view('payment');
+        $cart = session()->get('cart', []);
+        $cartTotal = array_sum(array_map(function($item) {
+            return $item['price'] * $item['quantity'];
+        }, $cart));
+
+        return view('payment', compact('cartTotal'));
     }
 }

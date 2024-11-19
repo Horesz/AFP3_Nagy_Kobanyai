@@ -32,6 +32,7 @@ Route::post('/order/submit', [OrderController::class, 'submit'])->name('order.su
 Route::get('/order/success', function () {
     return view('order.success');
 })->name('order.success');
+Route::get('/order/success', [OrderController::class, 'show'])->name('order.success');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
