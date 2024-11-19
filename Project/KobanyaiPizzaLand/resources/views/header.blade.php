@@ -22,7 +22,7 @@
                     <a class="log_reg" href="{{ route('register') }}">Regisztráció</a>
                 @endauth
             @endif
-            <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár {{ $cartTotal ?? 0 }} Ft</a>
+            <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár <span id="total-amount">{{ $cartTotal }} Ft</a>
         </nav>
     </div>
 </header>

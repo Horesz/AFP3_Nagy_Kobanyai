@@ -48,7 +48,7 @@
                     </tbody>
                 </table>
 
-                <p class="total">Teljes összeg: <span id="total-amount">{{ $cartTotal }} Ft</span></p>
+                <p class="total">Teljes összeg: <span id="total-amount2">{{ $cartTotal }} Ft</span></p>
                 <button class="btn-payment"><a href="{{ route('payment') }}">Fizetés</a></button><br>
                 <button class="btn-back"><a href="/">Vissza a főoldalra</a></button>
             @else
@@ -78,6 +78,7 @@
                         $('[data-id="' + id + '"] .item-total').text(response.itemTotal + ' Ft');
                         // Frissítjük a teljes összeget
                         $('#total-amount').text(response.total + ' Ft');
+                        $('#total-amount2').text(response.total + ' Ft');
                     }
                 });
             });
