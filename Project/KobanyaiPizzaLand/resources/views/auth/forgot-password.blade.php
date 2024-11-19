@@ -1,3 +1,9 @@
+@include('header')
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
         {{ __('Elfelejtette a jelszavát? Semmi gond. Csak adja meg az email-címét, és elküldünk Önnek egy jelszó-visszaállítási linket, amely lehetővé teszi egy új jelszó beállítását.') }}
@@ -23,3 +29,4 @@
         </div>
     </form>
 </x-guest-layout>
+@include('footer')
