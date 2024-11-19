@@ -15,6 +15,7 @@ Route::get('/', function () {
 // routes/web.php
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
 Route::get('/pizzas', [PizzaController::class, 'view'])->name('pizzas.view');
 
@@ -31,6 +32,10 @@ Route::post('/order/submit', [OrderController::class, 'submit'])->name('order.su
 Route::get('/order/success', function () {
     return view('order.success');
 })->name('order.success');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

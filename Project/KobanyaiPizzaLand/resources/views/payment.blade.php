@@ -38,7 +38,7 @@
                 <label for="payment_method">Fizetési mód:</label>
                 <select id="payment_method" name="payment_method" class="form-control" required>
                     <option value="credit_card">Bankkártya</option>
-                    <option value="paypal">PayPal</option>
+                    <option value="szepkartya">Szépkártya</option>
                     <option value="cash_on_delivery">Utánvét</option>
                 </select>
             </div>
