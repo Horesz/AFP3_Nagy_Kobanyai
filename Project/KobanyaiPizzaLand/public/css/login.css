@@ -102,6 +102,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(45deg, rgba(249,243,189,1) 0%, rgba(255,215,70,1) 100%);
+    color: white;
     padding: 15px 30px;
     position: fixed;
     top: 0;
@@ -110,64 +111,57 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header .logo-container {
-    display: flex;
-    align-items: center;
-}
-
-header .logo-container img {
-    width: 70px;
-    height: auto;
-    margin-right: 15px;
-}
-
-header .logo-container .logo-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #d32f2f;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 header nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 header nav a {
     color: rgb(18, 18, 18);
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 130%;
     font-weight: bold;
     transition: .3s;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 header nav a:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: antiquewhite;
     scale: 1.1;
-}
-
-/* Kosár */
-header .cart {
-    display: flex;
-    align-items: right;
-    background-color: #fff;
-    color: #d32f2f;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 20px;
-    text-decoration: none;
     transition: .3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    right: 30px;
 }
 
-header .cart:hover {
-    background-color: #ffd700;
+#cart {
+    margin-left: auto;
+    color: rgb(148, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    background-color: antiquewhite;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#cart:hover {
+    background-color: rgb(246, 217, 183);
+    transition: .3s;
+}
+.log_reg {
+    color: #630f00;
+    background-color: #e1c985;
+    border-radius: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 110%; 
+}
+
+.log_reg:hover {
+    background-color: #d4b77b;
+    transition: .3s;
     cursor: pointer;
 }
 
@@ -236,8 +230,11 @@ footer {
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
+
 
 /* Animáció */
 @keyframes fadeIn {
