@@ -7,7 +7,7 @@
         <title>PizzaLand</title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+        <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     </head>
 <body>
@@ -22,6 +22,12 @@
                 <img id="rotating-image" src="{{ asset($randomImages[0]) }}" alt="Pizza">
             </div>
             <a href="{{ route('pizzas.view') }}" class="btn explore-button">Fedezd fel a pizzákat!</a>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <h2>Vásárlói Vélemények</h2>
         </div>
     </section>
 

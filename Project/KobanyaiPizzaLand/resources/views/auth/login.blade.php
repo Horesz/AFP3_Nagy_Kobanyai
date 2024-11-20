@@ -1,13 +1,14 @@
 
 <link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+<link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 <div class="register-container">
     <div class="logo-container">
         <a href="/" class="img">
-            <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
+            <img src="{{ asset('images/logo/logo.png') }}" alt="PizzaLand" id="logo">
         </a>
     </div>
 
@@ -54,4 +55,8 @@
         </div>
     </form>
 </div>
-    @include('footer')
+
+<?php
+    @include('profile.footer')
+
+?>

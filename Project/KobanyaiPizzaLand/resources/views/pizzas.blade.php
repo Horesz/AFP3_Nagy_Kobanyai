@@ -7,7 +7,7 @@
     <title>PizzaLand</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
 </head>
 <body>
 
@@ -19,6 +19,16 @@
             <form action="{{ route('pizzas.view') }}" method="GET">
                 <input id="pizzakeres" type="text" name="query" placeholder="Keresés a pizzák között..." value="{{ request()->input('query') }}">
                 <button id="pizzakeres_but" type="submit">Keresés</button>
+            </form>
+            <form action="{{ route('pizzas.view') }}" method="GET" class="sort-form">
+                <select name="sort" id="sort" onchange="this.form.submit()">
+                    <option value="">Rendezés</option>
+                    <option value="name_asc" {{ request()->input('sort') == 'name_asc' ? 'selected' : '' }}>Név szerint (A-Z)</option>
+                    <option value="name_desc" {{ request()->input('sort') == 'name_desc' ? 'selected' : '' }}>Név szerint (Z-A)</option>
+                    <option value="price_asc" {{ request()->input('sort') == 'price_asc' ? 'selected' : '' }}>Ár szerint (olcsótól drágáig)</option>
+                    <option value="price_desc" {{ request()->input('sort') == 'price_desc' ? 'selected' : '' }}>Ár szerint (drágától olcsóig)</option>
+                    <option value="toppings" {{ request()->input('sort') == 'toppings' ? 'selected' : '' }}>Feltétek szerint</option>
+                </select>
             </form>
             <div class="product-list">
                 @if($pizzas->isEmpty())
@@ -41,18 +51,7 @@
         </div>
     </section>
 
-    <section class="reviews">
-        <div class="container">
-            <h2>Vásárlói Vélemények</h2>
-            <?php
-                if(DB::connection()->getPdo())
-                {
-                    echo "Successfully connected to the database =>"
-                    .DB::connection()->getDatabaseName();
-                }
-            ?>
-        </div>
-    </section>
+
 
     <div id="pizza-details-modal" class="modal">
         <div class="modal-content">
