@@ -1,4 +1,4 @@
-<!-- resources/views/specialoffers.blade.php -->
+<!-- resources/views/pizzas.blade.php -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -16,11 +16,13 @@
     <section class="products">
         <div class="container">
             <h1>Akciók</h1>
-            
+        
         </div>
     </section>
 
+
     @include('footer')
 
+    
 </body>
 </html>

@@ -19,23 +19,23 @@
         <p>Teljes összeg: {{ $cartTotal }} Ft</p>
         <form action="{{ route('order.submit') }}" method="POST">
             @csrf
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="name">Név:</label>
                 <input type="text" id="name" name="name" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="address">Cím:</label>
                 <input type="text" id="address" name="address" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="phone">Telefonszám:</label>
                 <input type="text" id="phone" name="phone" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="payment_method">Fizetési mód:</label>
                 <select id="payment_method" name="payment_method" class="form-control" required>
                     <option value="credit_card">Bankkártya</option>

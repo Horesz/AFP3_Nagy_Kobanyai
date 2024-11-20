@@ -28,6 +28,10 @@ header {
     color: white;
     padding: 10px 0;
 }
+.footlink{
+    color:#c1c1c1;
+    text-decoration: none;
+}
 
 .welcome {
     text-align: center;
@@ -393,7 +397,7 @@ tr:nth-child(even) {
 .btn-remove:hover {
     background-color: #c33400;
 }
-form input[type="text"] {
+#pizzakeres[type="text"] {
     width: 30%;
     margin-left: auto;
     margin-right: auto;
@@ -406,7 +410,7 @@ form input[type="text"] {
     margin-bottom: 20px;
     font-family: "Sour Gummy", sans-serif;
 }
-form input[type="text"]:focus {
+#pizzakeres[type="text"]:focus {
     width: 35%;
     padding: 12px;
     border-color: #ffc40080;
@@ -541,6 +545,12 @@ thead{
     }
 }
 
+
+
+
+
+
+
 /* Kapcsolat */
 .contact {
     padding: 50px 0;
@@ -548,8 +558,9 @@ thead{
 }
 
 .contact h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .contact p {
@@ -609,4 +620,17 @@ thead{
     max-width: 600px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+/* Fizetés */
+.form-control{
+    background-color: #f9f9f9;
+    border-radius: 0;
+    box-shadow: black 0 0 0 0;
 }
