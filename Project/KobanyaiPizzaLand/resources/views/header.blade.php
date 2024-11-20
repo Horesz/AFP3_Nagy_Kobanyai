@@ -1,12 +1,12 @@
 <!-- resources/views/header.blade.php -->
 <header>
     <div class="container">
-        <a href="/"> <img src="{{ asset('images/logo/logo.png') }}" alt="PizzaLand" id="logo"> </a>
+        <a href="/"> <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo"> </a>
         <nav>
             <a href="{{ route('home.view') }}">Kezdőlap</a>
             <a href="{{ route('pizzas.view') }}">Pizzák</a>
-            <a href="{{ route('specialoffers.index') }}">Akciók</a>
-            <a href="{{ route('contact.index') }}">Kapcsolat</a>
+            <a href="#">Akciók</a>
+            <a href="{{ route('contact.view') }}">Kapcsolat</a>
 
             @if (Route::has('login'))
                 @auth
@@ -22,7 +22,7 @@
                     <a class="log_reg" href="{{ route('register') }}">Regisztráció</a>
                 @endauth
             @endif
-            <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár {{ $cartTotal ?? 0 }} Ft</a>
+            <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár <span id="total-amount">{{ $cartTotal }} Ft</a>
         </nav>
     </div>
 </header>
