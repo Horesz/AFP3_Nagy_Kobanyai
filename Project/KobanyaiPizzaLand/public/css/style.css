@@ -491,6 +491,19 @@ form #pizzakeres_but[type="submit"]:hover {
     color: #6c757d;
 }
 
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#background-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 .btn.explore-button {
     background-color: #ffd767;;
     color: #3f0000;
@@ -621,7 +634,6 @@ thead{
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 
 

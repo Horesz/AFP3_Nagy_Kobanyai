@@ -22,8 +22,15 @@
                 <img id="rotating-image" src="{{ asset($randomImages[0]) }}" alt="Pizza">
             </div>
             <a href="{{ route('pizzas.view') }}" class="btn explore-button">Fedezd fel a pizzákat!</a>
+            <div class="video-container">
+                <video id="background-video" autoplay loop>
+                    <source src="{{ asset('video/pizza.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </section>
+
 
     <section class="reviews">
         <div class="container">
@@ -39,6 +46,7 @@
             var currentIndex = 0;
             var imageElement = document.getElementById('rotating-image');
 
+            
             setInterval(function() {
                 imageElement.classList.add('fade-out');
                 setTimeout(function() {
@@ -48,6 +56,7 @@
                 }, 800);
             }, 10000);
         });
+
     </script>
 </body>
 </html>
