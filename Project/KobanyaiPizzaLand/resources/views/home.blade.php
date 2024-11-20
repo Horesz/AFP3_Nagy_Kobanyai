@@ -14,6 +14,12 @@
 
     @include('header')
 
+    <div class="video-container">
+        <video id="background-video" autoplay loop muted>
+            <source src="{{ asset('video/pizza.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <section class="welcome">
         <div class="container">
             <h1>Üdvözlünk a Kőbányai Pizzéria oldalán!</h1>
@@ -25,12 +31,6 @@
         </div>
     </section>
 
-    <div class="video-container">
-                <video id="background-video" autoplay loop muted >
-                    <source src="{{ asset('video/pizza.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-    </div>
 
     <div id="slider-container">
         <div id="slider-scroller">
@@ -61,8 +61,6 @@
         <div class="slider-heading-content">
             <h2>Vélemények</h2>
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
         <div class="slider_container">
             <div class="slides fade">
@@ -86,12 +84,12 @@
                 <br><span class="reviewer-info">Legjobb pizzák!</span>
             </div>
             <div class="review-item">
-                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">By Second Page Reviewer, NC</span>
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <br><span class="reviewer-info">Kedvencünk a Húsimádó!</span>
             </div>
             <div class="review-item">
-                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">By Second Page Reviewer, NC</span>
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
+                <br><span class="reviewer-info">Legjobb ajánlatok!</span>
             </div>
             </div>
         </div>
