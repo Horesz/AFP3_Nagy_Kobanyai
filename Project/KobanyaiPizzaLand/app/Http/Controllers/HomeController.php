@@ -20,7 +20,7 @@ class HomeController extends Controller
         }
 
         $images = File::files(public_path('images'));
-        $randomImages = collect($images)->random(10)->map(function ($file) {
+        $randomImages = collect($images)->random(20)->map(function ($file) {
             return 'images/' . $file->getFilename();
         });
 
