@@ -279,8 +279,8 @@ footer {
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: auto;
+    background: rgb(255,244,147);
+    background: linear-gradient(180deg, rgba(255,244,147,1) 0%, rgba(255,213,58,1) 100%);    margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
