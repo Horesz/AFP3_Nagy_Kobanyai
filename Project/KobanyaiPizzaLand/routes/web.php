@@ -20,6 +20,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
 Route::get('/pizzas', [PizzaController::class, 'view'])->name('pizzas.view');
 
+Route::get('/specialoffers', [PizzaController::class, 'specialoffers'])->name('specialoffers.view');
+
+Route::get('/contact', [PizzaController::class, 'contact'])->name('contact.view');
+
+
 Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
 
 

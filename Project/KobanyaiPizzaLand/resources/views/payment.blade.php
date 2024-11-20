@@ -6,7 +6,7 @@
     <title>PizzaLand - Fizetés</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
 </head>
 <body>
 
@@ -19,23 +19,23 @@
         <p>Teljes összeg: {{ $cartTotal }} Ft</p>
         <form action="{{ route('order.submit') }}" method="POST">
             @csrf
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="name">Név:</label>
                 <input type="text" id="name" name="name" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="address">Cím:</label>
                 <input type="text" id="address" name="address" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="phone">Telefonszám:</label>
                 <input type="text" id="phone" name="phone" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" class="form-control" required>
             </div>
-            <div class="form-group">
+            <div class="form-group order">
                 <label for="payment_method">Fizetési mód:</label>
                 <select id="payment_method" name="payment_method" class="form-control" required>
                     <option value="credit_card">Bankkártya</option>
