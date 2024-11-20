@@ -144,6 +144,5 @@
         </form>
     </div>
 
- @include('footer')
 
 </x-guest-layout>
