@@ -80,6 +80,21 @@
     .login-link:hover {
         color: #ff6b6b;
     }
+
+    .watermark{
+        position: fixed; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    padding: 10px;
+   
+    color: black;
+    font-size: 14px; 
+    text-align: center; 
+    z-index: 1000; 
+    }
+
+
 </style>
 
 <link rel="stylesheet" href="css/login.css">
@@ -143,6 +158,7 @@
             </div>
         </form>
     </div>
-
-
+    <div class = "watermark">   
+        <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
+    </div>
 </x-guest-layout>
