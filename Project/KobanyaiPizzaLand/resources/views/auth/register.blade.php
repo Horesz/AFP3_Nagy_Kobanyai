@@ -91,7 +91,7 @@
     
     <div class="logo-container">
         <a href="/" class="img">
-            <img src="{{ asset('images/logo.png') }}" alt="PizzaLand" id="logo">
+            <img src="{{ asset('images/logo/logo.png') }}" alt="PizzaLand" id="logo">
         </a>
     </div>
 
