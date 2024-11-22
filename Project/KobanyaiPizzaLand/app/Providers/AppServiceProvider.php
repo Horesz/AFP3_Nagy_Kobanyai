@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Pizza;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\File;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('cartTotal', $cartTotal);
         });
+
     }
+
 }
