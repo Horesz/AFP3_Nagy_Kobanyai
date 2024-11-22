@@ -38,10 +38,6 @@ header {
     padding: 50px 0;
 }
 
-.welcome h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
 
 .welcome p {
     font-size: 1.2em;
@@ -515,10 +511,13 @@ form #pizzakeres_but[type="submit"]:hover {
 .welcome {
     text-align: center;
     padding: 100px 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .welcome h1 {
-    font-size: 48px;
+    font-size: 55px;
+    margin-top: -40px;
     margin-bottom: 20px;
     color: #343a40;
 }
@@ -528,6 +527,10 @@ form #pizzakeres_but[type="submit"]:hover {
     margin-bottom: 40px;
     color: #6c757d;
 }
+
+
+
+
 
 .btn.explore-button {
     background-color: #ffd767;;
@@ -581,6 +584,30 @@ thead{
     .products h1 {
         font-size: 30px;
     }
+}
+
+
+
+.video-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -665,10 +692,312 @@ thead{
 
 
 
-
 /* Fizetés */
 .form-control{
     background-color: #f9f9f9;
     border-radius: 0;
     box-shadow: black 0 0 0 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Slideshow container */
+
+.slider_container {
+    max-width: 800px;
+    position: relative;
+    left: 0;
+    top: 10%;
+    margin: auto;
+    height: 200px;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    background: rgba(0,0,0,.1);
+    top: 0;
+    top: 60%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    text-align: center;
+    line-height: 40px; 
+    transition: 0.6s ease;
+  }
+  
+  /* Position the "next button" to the right */
+  
+  .next {
+    position: absolute;
+    right: 0;
+  }
+  
+  
+  /* On hover, add a black background color with a little bit see-through */
+  
+  .prev:hover,
+  .next:hover {
+    background-color: grey;
+    color: white;
+  }
+  
+  /* The dots/bullets/indicators */
+  
+  .slider_dots {
+    text-align: center;
+    &--dot {
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+      margin: 15px 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+  }
+  
+  .active,
+  .slider_dots--dot:hover {
+    background-color: #717171;
+  }
+  
+  
+  /* Fading animation */
+  
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+  
+  /* Slides and review */ 
+  .review-item {
+    height: 150px;
+    width: 250px;
+    background-color: #987f2e;
+    border: 1px rgb(76, 66, 0) solid;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    box-shadow: 0px 0px 10px 2px #535353;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+  }
+  
+  .review-item span {
+    display: inline-block;
+  }
+  
+  .review-item span.star-rating {
+    padding-top: 17%;
+    color: gold;
+    font-size: 25px;
+  }
+  
+  .review-item span.reviewer-info {
+    color: #ffffff;
+  }
+  
+
+  svg {
+    display: block;
+    height: 70%;
+    
+
+  }
+  
+  .pizza {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s ease-in-out infinite forwards;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+
+
+
+
+
+
+  /* Media Queries */ 
+  /*Small phones */
+  @media only screen and (max-width: 350px){
+     .slider_container {
+    max-width: 250px;
+    position: relative;
+    left: 0;
+    top: 15%;
+    margin: auto;
+    height: 150px;
+  }
+    .review-item {
+    height: 75px;
+    width: 70px;
+    background-color: #f8f8f8;
+    border: 1px lightgrey solid;
+    margin: 0;
+    margin-left: 7px;
+    padding: 0;
+    box-shadow: 2px 5px 2px -2px #f9f9f9;
+    display: inline-block;
+    text-align: center;
+    font-size: 8px;
+  }
+    .review-item span.star-rating {
+    padding-top: 25%;
+    color: gold;
+    font-size: 5px;
+  }
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    background: rgba(0,0,0,.1);
+    top: 0;
+    top: 60%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    text-align: center;
+    line-height: 15px; 
+    transition: 0.6s ease;
+  }
+  }
+  
+  
+  /* Modern Phones */
+  @media only screen and (min-width: 351px) and (max-width: 600px){
+    .container {
+    max-width: 600px;
+    height: 250px;
+    background-color: white;
+    position: relative;
+    margin:auto;
+  }
+    .slider_container {
+    max-width: 300px;
+    position: relative;
+    left: 0;
+    top: 15%;
+    margin: auto;
+    height: 200px;
+  }
+    .review-item {
+    height: 95px;
+    width: 80px;
+    background-color: #f8f8f8;
+    border: 1px lightgrey solid;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    box-shadow: 2px 5px 2px -2px #f9f9f9;
+    display: inline-block;
+    text-align: center;
+    font-size: 10px;
+  }
+    .review-item span.star-rating {
+    padding-top: 30%;
+    color: gold;
+    font-size: 10px;
+  }
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    background: rgba(0,0,0,.1);
+    top: 0;
+    top: 60%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    text-align: center;
+    line-height: 20px; 
+    transition: 0.6s ease;
+  }
+  }
+  /* Media Query for tablets and small laptop */
+  @media only screen and (min-width: 601px) and (max-width: 900px){
+    .container {
+    max-width: 900px;
+    height: 250px;
+    background-color: white;
+    position: relative;
+    margin:auto;
+  }
+    .slider_container {
+    max-width: 600px;
+    position: relative;
+    left: 0;
+    top: 10%;
+    margin: auto;
+    height: 200px;
+  }
+    .review-item {
+    height: 150px;
+    width: 150px;
+    background-color: #f8f8f8;
+    border: 1px lightgrey solid;
+    margin: 0;
+    margin-left: 30px;
+    padding: 0;
+    box-shadow: 2px 5px 2px -2px #f9f9f9;
+    display: inline-block;
+    text-align: center;
+  }
+    .review-item span.star-rating {
+    padding-top: 25%;
+    color: gold;
+    font-size: 15px;
+  }
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    background: rgba(0,0,0,.1);
+    top: 0;
+    top: 60%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    text-align: center;
+    line-height: 30px; 
+    transition: 0.6s ease;
+  }
+  }
