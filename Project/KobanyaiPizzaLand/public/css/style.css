@@ -446,6 +446,8 @@ footer {
 
 
 
+
+
 /* Cart */
 table {
     width: 100%;
@@ -1086,3 +1088,125 @@ thead{
     transition: 0.6s ease;
   }
   }
+
+
+
+
+
+
+
+  .header-span {
+    display: block;
+    font-weight: 100;
+  }
+  
+  .all-the-foods {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    color:white;
+  }
+  
+  div.clip-path-container {
+    display: inline-block;
+    position: relative;
+    height: 250px;
+    width: 250px;
+    margin: 10px ;
+    padding: 3px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    overflow: hidden;  
+    border-radius: 50%;
+    border-collapse: separate; 
+    background-color: #222;
+  }
+  
+  .clip-path-container:focus,
+  .clip-path-container:active,
+  .clip-path-container:hover {
+    border-radius: 50%;
+    outline: none;
+  } 
+  
+  .food {
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    transition: all .2s ease-in-out;
+    transform: scale(1.5); 
+    outline: none;
+    overflow: hidden;  
+    clip-path: polygon(0 100%, 0 0, 52% 0, 52% 100%);
+    clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
+  }
+  
+  
+  .clip-path-container:hover .food {
+    clip-path: polygon(50% 100%, 50% 0, 100% 0, 100% 100%);
+    transform: scale(1.1);
+    
+  }
+  
+  .clip-path-container:hover .description-holder { 
+    left: 20px;
+    opacity: 1;
+  }
+  
+  .description-holder {
+    position: absolute;
+    top: 35px;
+    left: 120px;
+    height: 300px;
+    width: 100px;
+    transition: all .4s ease-in-out;
+    transition-delay: .1s;
+    opacity: 0;
+    text-align: right;
+  }
+  
+  
+  .description-holder h4 {
+    font-size: 14px;
+    margin-bottom: -8px;
+  }
+  
+  .description-holder p {
+    max-width: 100px;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: none;
+    
+  }
+  
+  .bibimbap {
+    background-image: url('../images/cheese.jpg');
+    background-position: 50% 20%;
+  }
+  
+  .pizza {
+    background-image: url('../images/diavola.jpg');
+    background-position: 50% 20%;
+  }
+  
+  .guacamole {
+    background-image: url('../images/Húsimádó.jpg');
+    background-position: 50% 20%;
+  }
+  
+  .cookie {
+    background-image: url('../images/greek.jpg');
+    background-position: 50% 20%;
+  }
+  
+  .donut {
+    background-image: url('../images/funghi.jpg');
+    background-position: 50% 20%;
+  }
+  
+  .pancake {
+    background-image: url('../images/capricciosa.jpg');
+    background-position: 50% 20%;
+  }
+
+  
