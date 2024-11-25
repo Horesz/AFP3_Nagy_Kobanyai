@@ -8,37 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
-    <style>
-        @media (max-width: 768px) {
-            table, thead, tbody, th, td, tr {
-                display: block;
-            }
-
-            thead tr {
-                display: none;
-            }
-
-            tr {
-                margin-bottom: 15px;
-            }
-
-            td {
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
-            }
-
-            td:before {
-                content: attr(data-label);
-                position: absolute;
-                left: 0;
-                width: 50%;
-                padding-left: 15px;
-                font-weight: bold;
-                text-align: left;
-            }
-        }
-    </style>
 </head>
 <body>
 

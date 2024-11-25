@@ -8,20 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
-    <style>
-        @media (max-width: 768px) {
-            .product-item {
-                width: 100%;
-                margin: 10px 0;
-            }
 
-            .product-list {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
 </head>
 <body>
 
