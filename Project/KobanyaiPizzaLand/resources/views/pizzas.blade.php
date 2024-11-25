@@ -42,7 +42,7 @@
                             <img class="pizza-image" src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
                             <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn product-button">Kosárhoz adás</button>
+                                <button type="submit" class="btn product-button"><i class="fas fa-shopping-bag"></i></button>
                             </form>
                         </div>
                     @endforeach
