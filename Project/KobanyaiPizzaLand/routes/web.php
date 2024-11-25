@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\NewsletterController;
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PizzaController;
@@ -9,6 +9,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactController;
 
 
+
+use App\Http\Controllers\NewsletterController;
 use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
