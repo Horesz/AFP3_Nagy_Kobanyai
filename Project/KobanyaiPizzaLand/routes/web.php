@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsletterController;
 
 use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
@@ -27,6 +28,7 @@ Route::get('/contact', [PizzaController::class, 'contact'])->name('contact.view'
 
 Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
 
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
 
 Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');

@@ -31,6 +31,20 @@
         </div>
     </section>
 
+    <section class="opening-hours">
+        <div class="container">
+            <h2>Nyitvatartás</h2>
+            <ul>
+                <li>Hétfő: 10:00 - 22:00</li>
+                <li>Kedd: 10:00 - 22:00</li>
+                <li>Szerda: 10:00 - 22:00</li>
+                <li>Csütörtök: 10:00 - 22:00</li>
+                <li>Péntek: 10:00 - 23:00</li>
+                <li>Szombat: 11:00 - 23:00</li>
+                <li>Vasárnap: 11:00 - 21:00</li>
+            </ul>
+        </div>
+    </section>
 
     <div id="slider-container">
         <div id="slider-scroller">
@@ -158,6 +172,22 @@
         </div>
 
     </section>
+
+
+        <!-- Hírlevél feliratkozás -->
+        <div class="newsletter-signup">
+        <h2>Iratkozz fel hírlevelünkre!</h2>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        <form action="{{ route('newsletter.subscribe') }}" method="POST">
+            @csrf
+            <input type="email" name="email" placeholder="Email címed" required>
+            <button type="submit">Feliratkozás</button>
+        </form>
+    </div>
 
     @include('footer')
 
