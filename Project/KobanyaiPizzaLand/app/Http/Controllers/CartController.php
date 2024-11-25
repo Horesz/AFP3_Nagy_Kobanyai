@@ -11,15 +11,14 @@ class CartController extends Controller
     {
         $cart = session()->get('cart', []);
 
-        $total = 0;
-        foreach ($cart as $item) {
-            $total += $item['price'] * $item['quantity'];
-        }
+        $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'], $cart));
+
+        session()->put('cartTotal', $total);
 
         return view('cart', ['cart' => $cart, 'cartTotal' => $total]);
     }
 
-    public function addToCart($id)
+    public function addToCart(Request $request, $id)
     {
         $pizza = Pizza::find($id);
 
@@ -29,43 +28,65 @@ class CartController extends Controller
 
         $cart = session()->get('cart', []);
 
+        $extras = $request->input('extras', []);
+        $extras = array_map(fn($extra) => ['name' => $this->getExtraName($extra), 'price' => (int) $extra], $extras);
+
         if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
+            $cart[$id]['extras'] = array_merge($cart[$id]['extras'], $extras);
         } else {
             $cart[$id] = [
                 "name" => $pizza->nev,
                 "price" => $pizza->ar,
-                "quantity" => 1
+                "quantity" => 1,
+                "extras" => $extras
             ];
         }
 
         session()->put('cart', $cart);
 
+        // Recalculate the total
+        $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'], $cart));
+
+        session()->put('cartTotal', $total);
+
         return redirect()->route('pizzas.view')->with('success', 'Pizza added to cart.');
     }
 
-
-
-    public function updateQuantity(Request $request, $id)
-{
-    $cart = session()->get('cart', []);
-
-    if (isset($cart[$id])) {
-        $cart[$id]['quantity'] = $request->quantity;
-        session()->put('cart', $cart);
+    private function getExtraName($price)
+    {
+        switch ($price) {
+            case 200:
+                return 'Extra sajt';
+            case 300:
+                return 'Extra szalámi';
+            case 250:
+                return 'Extra gomba';
+            default:
+                return 'Ismeretlen feltét';
+        }
     }
 
-    // Számolja ki az új teljes összeget
-    $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
-    $itemTotal = $cart[$id]['price'] * $cart[$id]['quantity'];
+    public function updateQuantity(Request $request, $id)
+    {
+        $cart = session()->get('cart', []);
 
-    return response()->json([
-        'total' => $total,
-        'itemTotal' => $itemTotal
-    ]);
-}
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] = $request->quantity;
+            session()->put('cart', $cart);
+        }
 
+        // Számolja ki az új teljes összeget
+        $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'], $cart));
+        $itemTotal = $cart[$id]['price'] * $cart[$id]['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $cart[$id]['extras'] ?? [])) * $cart[$id]['quantity'];
 
+        session()->put('cartTotal', $total);
+
+        return response()->json([
+            'total' => $total,
+            'itemTotal' => $itemTotal
+        ]);
+    }
 
     public function removeFromCart($id)
     {

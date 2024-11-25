@@ -22,7 +22,12 @@
                     <a class="log_reg" href="{{ route('register') }}">Regisztráció</a>
                 @endauth
             @endif
-            <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár <span id="total-amount">{{ $cartTotal }} Ft</a>
+            <a id="cart" href="{{ route('cart.view') }}"><i class="fas fa-shopping-bag"></i> Kosár <span id="total-amount">{{ session('cartTotal', 0) }} Ft</span></a>
         </nav>
     </div>
 </header>
+<script>
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+        document.querySelector('.nav-list').classList.toggle('active');
+    });
+</script>

@@ -8,6 +8,37 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
+    <style>
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+            }
+
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -23,6 +54,7 @@
                         <tr>
                             <th>Pizza név</th>
                             <th>Ár (Ft)</th>
+                            <th>Extra feltétek</th>
                             <th>Mennyiség</th>
                             <th>Összesen</th>
                             <th>Műveletek</th>
@@ -31,13 +63,22 @@
                     <tbody>
                         @foreach($cart as $id => $item)
                             <tr data-id="{{ $id }}">
-                                <td>{{ $item['name'] }}</td>
-                                <td>{{ $item['price'] }} Ft</td>
-                                <td>
+                                <td data-label="Pizza név">{{ $item['name'] }}</td>
+                                <td data-label="Ár (Ft)">{{ $item['price'] }} Ft</td>
+                                <td data-label="Extra feltétek">
+                                    @if(isset($item['extras']) && count($item['extras']) > 0)
+                                        @foreach($item['extras'] as $extra)
+                                            {{ $extra['name'] }} ({{ $extra['price'] }} Ft)<br>
+                                        @endforeach
+                                    @else
+                                        Nincs extra feltét
+                                    @endif
+                                </td>
+                                <td data-label="Mennyiség">
                                     <input type="number" id="cart_input" name="quantity" value="{{ $item['quantity'] }}" min="1" style="width: 50px;" class="quantity-input">
                                 </td>
-                                <td class="item-total">{{ $item['price'] * $item['quantity'] }} Ft</td>
-                                <td>
+                                <td data-label="Összesen" class="item-total">{{ $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'] }} Ft</td>
+                                <td data-label="Műveletek">
                                     <form action="{{ route('cart.remove', $id) }}" method="POST" style="display: inline;">
                                         @csrf
                                         <button type="submit" class="btn-remove">Törlés</button>
@@ -48,7 +89,7 @@
                     </tbody>
                 </table>
 
-                <p class="total">Teljes összeg: <span id="total-amount2">{{ $cartTotal }} Ft</span></p>
+                <p class="total">Teljes összeg: <span id="total-amount2">{{ session('cartTotal', 0) }} Ft</span></p>
                 <button class="btn-payment"><a href="{{ route('payment') }}">Fizetés</a></button><br>
                 <button class="btn-back"><a href="/">Vissza a főoldalra</a></button>
             @else
