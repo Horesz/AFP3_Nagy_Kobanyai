@@ -1213,3 +1213,42 @@ thead{
     color: #555;
 }
 
+.btn-submit{
+  font-family: "Sour Gummy", sans-serif;
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: larger;
+    border: 0;
+    transition: .3s;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.btn-submit:hover {
+    background-color: #c33400;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.payment_method{
+  background-color: #000000;
+}
+
+/* Dropdown menu styles */
+#payment_method {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fffefb;
+    font-size: 1em;
+    box-shadow: 0px 0px 0px;
+    transition: border-color 0.3s ease;
+}
+
+#payment_method:focus {
+    border-color: #ff5733;
+    outline: none;
+}

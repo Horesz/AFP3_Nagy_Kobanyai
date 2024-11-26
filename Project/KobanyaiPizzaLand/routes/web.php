@@ -39,7 +39,7 @@ Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 Route::post('/cart/update/{id}', [CartController::class, 'updateQuantity'])->name('cart.update');
 Route::post('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
 
-Route::get('/payment', [PaymentController::class, 'show'])->name('payment');//->middleware('auth');
+Route::get('/payment', [PaymentController::class, 'show'])->name('payment');
 Route::post('/order/submit', [OrderController::class, 'submit'])->name('order.submit');
 Route::get('/order/success', function () {
     return view('order.success');
