@@ -22,28 +22,37 @@ class CartController extends Controller
     {
         $pizza = Pizza::find($id);
 
-        if (!$pizza) {
-            return redirect()->route('pizzas.view')->with('error', 'Pizza not found.');
-        }
+    if (!$pizza) {
+        return redirect()->route('pizzas.view')->with('error', 'Pizza not found.');
+    }
 
-        $cart = session()->get('cart', []);
+    $cart = session()->get('cart', []);
 
-        $extras = $request->input('extras', []);
-        $extras = array_map(fn($extra) => ['name' => $this->getExtraName($extra), 'price' => (int) $extra], $extras);
+    $extras = $request->input('extras', []);
+    $extras = array_map(fn($extra) => ['name' => $this->getExtraName($extra), 'price' => (int) $extra], $extras);
 
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-            $cart[$id]['extras'] = array_merge($cart[$id]['extras'], $extras);
-        } else {
-            $cart[$id] = [
-                "name" => $pizza->nev,
-                "price" => $pizza->ar,
-                "quantity" => 1,
-                "extras" => $extras
-            ];
-        }
+    $size = $request->input('size', 32); // Alapértelmezett méret 32 cm
+    $price = $pizza->ar;
+    if ($size == 50) {
+        $price *= 2; // Az 50 cm-es pizza ára kétszerese
+    }
 
-        session()->put('cart', $cart);
+    if (isset($cart[$id])) {
+        $cart[$id]['quantity']++;
+        $cart[$id]['extras'] = array_merge($cart[$id]['extras'], $extras);
+        $cart[$id]['size'] = $size; // Méret hozzáadása
+        $cart[$id]['price'] = $price;
+    } else {
+        $cart[$id] = [
+            "name" => $pizza->nev,
+            "price" => $price,
+            "quantity" => 1,
+            "extras" => $extras,
+            "size" => $size // Méret hozzáadása
+        ];
+    }
+
+    session()->put('cart', $cart);
 
         // Recalculate the total
         $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'], $cart));

@@ -72,6 +72,8 @@
             const modal = document.getElementById('pizza-details-modal');
             const closeButton = document.querySelector('.close-button');
             const pizzaDetails = document.getElementById('pizza-details');
+            const pizzaSize = document.getElementById('pizza-size');
+            const totalPrice = document.getElementById('total-price');
 
             pizzaImages.forEach(image => {
                 image.addEventListener('click', function () {
@@ -86,6 +88,13 @@
                                 <img src="/images/${data.nev.toLowerCase().replace(/ /g, '')}.jpg" alt="${data.nev}">
                                 <form action="/add-to-cart/${data.id}" method="POST">
                                     @csrf
+                                    <div id="size-select">
+                                        <label for="pizza-size">Méret:</label>
+                                            <select id="pizza-size">
+                                            <option value="32">32 cm</option>
+                                            <option value="50">50 cm</option>
+                                        </select>
+                                    </div>
                                     <div id="extra-toppings">
                                         <h3>Extra feltétek</h3>
                                         <label><input type="checkbox" value="200" class="extra-topping" name="extras[]"> Extra sajt (+200 Ft)</label><br>
@@ -108,6 +117,14 @@
                         totalPrice += parseInt(event.target.value);
                     } else {
                         totalPrice -= parseInt(event.target.value);
+                    }
+                    document.getElementById('total-price').innerText = `Összesen: ${totalPrice} Ft`;
+                }
+                if (event.target.id === 'pizza-size') {
+                    let totalPrice = parseInt(document.getElementById('total-price').innerText.replace('Összesen: ', '').replace(' Ft', ''));
+                    let sizeValue = parseInt(event.target.value);
+                    if (sizeValue === 50) {
+                        totalPrice *= 2;
                     }
                     document.getElementById('total-price').innerText = `Összesen: ${totalPrice} Ft`;
                 }

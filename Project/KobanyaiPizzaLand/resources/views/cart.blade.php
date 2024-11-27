@@ -22,6 +22,7 @@
                     <thead>
                         <tr>
                             <th>Pizza név</th>
+                            <th>Méret</th>
                             <th>Ár (Ft)</th>
                             <th>Extra feltétek</th>
                             <th>Mennyiség</th>
@@ -33,6 +34,7 @@
                         @foreach($cart as $id => $item)
                             <tr data-id="{{ $id }}">
                                 <td data-label="Pizza név">{{ $item['name'] }}</td>
+                                <td data-label="Méret">{{ $item['size'] }} cm</td>
                                 <td data-label="Ár (Ft)">{{ $item['price'] }} Ft</td>
                                 <td data-label="Extra feltétek">
                                     @if(isset($item['extras']) && count($item['extras']) > 0)
