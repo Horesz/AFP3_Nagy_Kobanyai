@@ -82,12 +82,11 @@
     }
 
     .watermark{
-        position: fixed; 
+    position: fixed; 
     bottom: 0; 
     left: 50%; 
     transform: translateX(-50%); 
     padding: 10px;
-   
     color: black;
     font-size: 14px; 
     text-align: center; 
@@ -159,6 +158,6 @@
         </form>
     </div>
     <div class = "watermark">   
-        <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
+    <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
     </div>
 </x-guest-layout>
