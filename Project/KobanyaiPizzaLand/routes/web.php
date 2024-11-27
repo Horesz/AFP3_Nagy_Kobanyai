@@ -61,4 +61,7 @@ Route::get('/sales', [SalesController::class, 'index'])->name('sales.view');
 
 Route::get('/pizzamaker', [PizzaController::class, 'pizzamaker'])->name('pizzamaker');
 
+Route::post('/add-custom-pizza', [CartController::class, 'addCustomPizza'])->name('add.custom.pizza');
+
+
 require __DIR__.'/auth.php';

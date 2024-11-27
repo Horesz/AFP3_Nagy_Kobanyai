@@ -1,4 +1,3 @@
-<!-- resources/views/pizzas.blade.php -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -31,6 +30,10 @@
                     <option value="toppings" {{ request()->input('sort') == 'toppings' ? 'selected' : '' }}>Feltétek szerint</option>
                 </select>
             </form>
+            <a href="{{ route('pizzamaker') }}">
+                <button type="button" class="btn pizzamaker-btn">Pizzakészítő</button>
+            </a>
+            
             <div class="product-list">
                 @if($pizzas->isEmpty())
                     <p>Nincs találat a keresésre.</p>
@@ -51,8 +54,6 @@
             </div>
         </div>
     </section>
-
-
 
     <div id="pizza-details-modal" class="modal">
         <div class="modal-content">

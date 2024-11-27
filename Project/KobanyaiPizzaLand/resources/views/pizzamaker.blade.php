@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -13,7 +12,7 @@
     <section class="pizzamaker">
         <div class="container">
             <h1>Pizzakészítő</h1>
-            <form method="POST" action="{{ route('add.to.cart') }}">
+            <form method="POST" action="{{ route('add.custom.pizza') }}">
                 @csrf
                 <label for="pizza-name">Pizza neve:</label>
                 <input type="text" id="pizza-name" name="pizza_name" required>
@@ -23,7 +22,6 @@
                     <option value="extra_cheese">Extra sajt</option>
                     <option value="extra_salami">Extra szalámi</option>
                     <option value="extra_mushroom">Extra gomba</option>
-                    
                 </select>
 
                 <label for="pizza-price">Ár:</label>
@@ -34,6 +32,6 @@
         </div>
     </section>
 
-    @include('footer')  <!-- Ha van lábléc -->
+    @include('footer') 
 </body>
 </html>

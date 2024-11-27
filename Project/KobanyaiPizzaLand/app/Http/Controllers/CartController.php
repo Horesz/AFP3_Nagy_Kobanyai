@@ -99,5 +99,49 @@ class CartController extends Controller
 
         return redirect()->route('cart.view')->with('success', 'A pizza eltávolítva a kosárból!');
     }
+    
+    public function addCustomPizzaToCart(Request $request)
+    {
+    $pizzaName = $request->input('pizza_name', 'Egyedi Pizza');
+    $price = (int) $request->input('price', 0);
+    $extras = $request->input('toppings', []);
+    
+    $cart = session()->get('cart', []);
+
+    $customId = 'custom_' . uniqid();
+
+    $extrasFormatted = array_map(fn($extra) => [
+        'name' => $this->getExtraName($extra),
+        'price' => $this->getExtraPrice($extra)
+    ], $extras);
+
+    $cart[$customId] = [
+        "name" => $pizzaName,
+        "price" => $price,
+        "quantity" => 1,
+        "extras" => $extrasFormatted
+    ];
+
+    session()->put('cart', $cart);
+
+    $total = array_sum(array_map(
+        fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'],
+        $cart
+    ));
+
+    session()->put('cartTotal', $total);
+
+    return redirect()->route('pizzas.view')->with('success', 'Egyedi pizza hozzáadva a kosárhoz.');
+    }
+
+    private function getExtraPrice($key)
+    {
+        $extrasPrices = [
+            'extra_cheese' => 200,
+            'extra_salami' => 300,
+            'extra_mushroom' => 250,
+        ];
+        return $extrasPrices[$key] ?? 0;
+    }
 
 }
