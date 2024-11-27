@@ -125,6 +125,8 @@
                     let sizeValue = parseInt(event.target.value);
                     if (sizeValue === 50) {
                         totalPrice *= 2;
+                    } else {
+                        totalPrice = (totalPrice / 2) * (sizeValue / 32);
                     }
                     document.getElementById('total-price').innerText = `Összesen: ${totalPrice} Ft`;
                 }
