@@ -10,7 +10,7 @@ class CreatePizzasTable extends Migration
      * Run the migrations.
      */
     public function up()
-    {
+    {   
         Schema::create('pizzas', function (Blueprint $table) {
             $table->id();
             $table->string('nev');
