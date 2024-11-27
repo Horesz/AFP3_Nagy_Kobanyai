@@ -16,7 +16,7 @@
 <section class="payment-section">
     <div class="container">
         <h2>Fizetési adatok</h2>
-        <p>Teljes összeg: {{ $cartTotal }} Ft</p>
+        
         <form action="{{ route('order.submit') }}" method="POST">
             @csrf
             <div class="form-group order">
@@ -43,6 +43,7 @@
                     <option value="cash_on_delivery">Utánvét</option>
                 </select>
             </div>
+            <p style="font-size: larger">Teljes összeg: <b id="total-amount">{{ session('cartTotal', 0) }} Ft</b></p>
             <button type="submit" class="btn-submit">Rendelés leadása</button>
         </form>
     </div>

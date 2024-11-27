@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
+
 </head>
 <body>
 
@@ -42,7 +43,7 @@
                             <img class="pizza-image" src="{{ asset('images/' . strtolower(str_replace(' ', '', $pizza->nev)) . '.jpg') }}" alt="{{ $pizza->nev }}">
                             <form action="{{ route('add.to.cart', $pizza->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn product-button">Kosárhoz adás</button>
+                                <button type="submit" class="btn product-button"><i class="fas fa-shopping-bag"></i></button>
                             </form>
                         </div>
                     @endforeach
@@ -59,6 +60,7 @@
             <div id="pizza-details">
                 <!-- A pizza részletei itt jelennek meg -->
             </div>
+            <p id="total-price"></p>
         </div>
     </div>
 
@@ -84,12 +86,31 @@
                                 <img src="/images/${data.nev.toLowerCase().replace(/ /g, '')}.jpg" alt="${data.nev}">
                                 <form action="/add-to-cart/${data.id}" method="POST">
                                     @csrf
+                                    <div id="extra-toppings">
+                                        <h3>Extra feltétek</h3>
+                                        <label><input type="checkbox" value="200" class="extra-topping" name="extras[]"> Extra sajt (+200 Ft)</label><br>
+                                        <label><input type="checkbox" value="300" class="extra-topping" name="extras[]"> Extra szalámi (+300 Ft)</label><br>
+                                        <label><input type="checkbox" value="250" class="extra-topping" name="extras[]"> Extra gomba (+250 Ft)</label><br>
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Kosárhoz adás</button>
                                 </form>
                             `;
+                            document.getElementById('total-price').innerText = `Összesen: ${data.ar} Ft`;
                             modal.style.display = 'block';
                         });
                 });
+            });
+
+            document.addEventListener('change', function (event) {
+                if (event.target.classList.contains('extra-topping')) {
+                    let totalPrice = parseInt(document.getElementById('total-price').innerText.replace('Összesen: ', '').replace(' Ft', ''));
+                    if (event.target.checked) {
+                        totalPrice += parseInt(event.target.value);
+                    } else {
+                        totalPrice -= parseInt(event.target.value);
+                    }
+                    document.getElementById('total-price').innerText = `Összesen: ${totalPrice} Ft`;
+                }
             });
 
             closeButton.addEventListener('click', function () {
