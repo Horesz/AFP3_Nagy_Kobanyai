@@ -31,6 +31,20 @@
         </div>
     </section>
 
+    <section class="opening-hours">
+        <div class="container">
+            <h2>Nyitvatartás</h2>
+            <ul>
+                <li>Hétfő: 10:00 - 22:00</li>
+                <li>Kedd: 10:00 - 22:00</li>
+                <li>Szerda: 10:00 - 22:00</li>
+                <li>Csütörtök: 10:00 - 22:00</li>
+                <li>Péntek: 10:00 - 23:00</li>
+                <li>Szombat: 11:00 - 23:00</li>
+                <li>Vasárnap: 11:00 - 21:00</li>
+            </ul>
+        </div>
+    </section>
 
     <div id="slider-container">
         <div id="slider-scroller">
@@ -56,6 +70,63 @@
           <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[19]) }}" alt="Pizza"></div>
     </div>
     </div>
+
+<div class="all-the-foods">
+    <div>
+        <h2 style="color: black;">Kedvelt pizzáink</h2>
+    </div>
+  <div class="clip-path-container">
+    <div class="description-holder">
+      <h4>Cheese</h4>
+      <p>A klasszikus ízek kedvelőinek, tele olvadt sajt csábító harmóniájával.</p>
+    </div>
+    <div class="food bibimbap"></div>
+  </div>
+
+  <div class="clip-path-container">
+    <div class="description-holder">
+      <h4>Diavola</h4>
+      <p>Fűszeres, tüzes és izgalmas, tökéletes választás a pikáns ízek szerelmeseinek.</p>
+    </div>
+    <div class="food pizza"></div>
+  </div>
+  
+  <div class="clip-path-container">
+    <div class="description-holder guac-holder">
+      <h4>Húsimádó </h4>
+      <p>Egy valódi ízorgia, tele zamatos húsokkal a kiadós étkezések rajongóinak.</p>
+    </div>
+    <div class="food guacamole"></div>
+  </div>
+  
+  <div class="clip-path-container">
+    <div class="description-holder">
+      <h4>Greek </h4>
+      <p>Mediterrán ízek kavalkádja, amely a frissesség és a könnyedség jegyében készült.</p>
+    </div>
+    <div class="food cookie"></div>
+  </div>
+  
+  <div class="clip-path-container">
+    <div class="description-holder">
+      <h4>Funghi</h4>
+      <p>A gombák szerelmeseinek, ahol az erdei aromák találkoznak a pizza puha alapjával.</p>
+    </div>
+    <div class="food donut"></div>
+  </div>
+  
+  <div class="clip-path-container">
+    <div class="description-holder">
+      <h4>Capricciosa</h4>
+      <p>Egy változatos klasszikus, amely minden falatban új ízélményt nyújt.</p>
+    </div>
+    <div class="food pancake"></div>
+  </div>
+
+</div>
+
+
+
     <section class="reviews">
         <div class="container">
         <div class="slider-heading-content">
@@ -102,6 +173,22 @@
 
     </section>
 
+
+        <!-- Hírlevél feliratkozás -->
+        <div class="newsletter-signup">
+        <h2>Iratkozz fel hírlevelünkre!</h2>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        <form action="{{ route('newsletter.subscribe') }}" method="POST">
+            @csrf
+            <input type="email" name="email" placeholder="Email címed" required>
+            <button type="submit">Feliratkozás</button>
+        </form>
+    </div>
+
     @include('footer')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -145,94 +232,89 @@
 
         (function(){
   
-})()
+    })()
 
-let slideIndex = 1;
-showSlides(slideIndex);
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n); 
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
- let i;
-  let slides = document.getElementsByClassName("slides");
-  let dots = document.getElementsByClassName("slider_dots--dot");
-  if (n > slides.length) {
-    slideIndex = 1
-  }
-  if (n < 1) {
-    slideIndex = slides.length
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
-
-
-// Allows you to use the dots to navigate to the corresponding slide
-function dotPageChange(n){
-  let dots = document.getElementsByClassName("slider_dots--dot");
-  let i;
-  for (i = 0; i < dots.length; i++){
-    if (dots[i].id == n){
-      dots[i].className += " active";
-      currentSlide(n);
+    function plusSlides(n) {
+      showSlides(slideIndex += n); 
     }
-  }
-}
 
-//Change the input to anything but true in order to stop the animation on the slides
-let toggleSlide = true;
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
 
-// Change the variable below to speed up/slow down the time between slides, 1 second = 1000
-let timeBetweenSlideChange = 4000;
-
-slideAnimation(toggleSlide);
-
-function slideAnimation(boolean){
-  if (boolean === true){
-    
-let interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange);
-
-// Adding stop/start on hover to container
-let container = document.querySelector(".container");
-container.onmouseover = pauseSlides;
-container.onmouseleave = resumeSlides;
-
-// Adding stop/start on hover to the dots below slides
-let dots = document.getElementsByClassName("slider_dots--dot");
-for (i = 0; i < dots.length; i++) {
-   dots[i].onmouseenter = pauseSlides;
-   dots[i].onmouseleave = resumeSlides;
-}
-
-function pauseSlides()
-{
-    clearInterval(interval); // Clear the interval we set earlier
-}
-    
-function resumeSlides()
-{
-    interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange); // Restart the slides animation
-}
-  }
-  else {}
-};
+    function showSlides(n) {
+    let i;
+      let slides = document.getElementsByClassName("slides");
+      let dots = document.getElementsByClassName("slider_dots--dot");
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+        slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
 
 
+    // Allows you to use the dots to navigate to the corresponding slide
+    function dotPageChange(n){
+      let dots = document.getElementsByClassName("slider_dots--dot");
+      let i;
+      for (i = 0; i < dots.length; i++){
+        if (dots[i].id == n){
+          dots[i].className += " active";
+          currentSlide(n);
+        }
+      }
+    }
 
+    //Change the input to anything but true in order to stop the animation on the slides
+    let toggleSlide = true;
 
+    // Change the variable below to speed up/slow down the time between slides, 1 second = 1000
+    let timeBetweenSlideChange = 10000;
 
+    slideAnimation(toggleSlide);
+
+    function slideAnimation(boolean){
+      if (boolean === true){
+        
+    let interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange);
+
+    // Adding stop/start on hover to container
+    let container = document.querySelector(".container");
+    container.onmouseover = pauseSlides;
+    container.onmouseleave = resumeSlides;
+
+    // Adding stop/start on hover to the dots below slides
+    let dots = document.getElementsByClassName("slider_dots--dot");
+    for (i = 0; i < dots.length; i++) {
+      dots[i].onmouseenter = pauseSlides;
+      dots[i].onmouseleave = resumeSlides;
+    }
+
+    function pauseSlides()
+    {
+        clearInterval(interval); // Clear the interval we set earlier
+    }
+        
+    function resumeSlides()
+    {
+        interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange); // Restart the slides animation
+    }
+      }
+      else {}
+    };
 
     });
     </script>

@@ -96,4 +96,5 @@ class PizzaController extends Controller
             $pizza = Pizza::findOrFail($id);
             return response()->json($pizza);
         }
+
 }
