@@ -34,7 +34,12 @@
                         @foreach($cart as $id => $item)
                             <tr data-id="{{ $id }}">
                                 <td data-label="Pizza név">{{ $item['name'] }}</td>
-                                <td data-label="Méret">{{ $item['size'] }} cm</td>
+                                <td data-label="Méret">
+                                    <select class="size-select" data-id="{{ $id }}">
+                                        <option value="32" {{ $item['size'] == 32 ? 'selected' : '' }}>32 cm</option>
+                                        <option value="50" {{ $item['size'] == 50 ? 'selected' : '' }}>50 cm</option>
+                                    </select>
+                                </td>
                                 <td data-label="Ár (Ft)">{{ $item['price'] }} Ft</td>
                                 <td data-label="Extra feltétek">
                                     @if(isset($item['extras']) && count($item['extras']) > 0)
@@ -87,6 +92,27 @@
                     },
                     success: function(response) {
                         // Frissítjük az adott tétel összegét
+                        $('[data-id="' + id + '"] .item-total').text(response.itemTotal + ' Ft');
+                        // Frissítjük a teljes összeget
+                        $('#total-amount').text(response.total + ' Ft');
+                        $('#total-amount2').text(response.total + ' Ft');
+                    }
+                });
+            });
+            $('.size-select').on('change', function() {
+                var size = $(this).val();
+                var id = $(this).data('id');
+
+                $.ajax({
+                    url: '/cart/update-size/' + id,
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        size: size
+                    },
+                    success: function(response) {
+                        // Frissítjük az adott tétel árát és összegét
+                        $('[data-id="' + id + '"] td[data-label="Ár (Ft)"]').text(response.price + ' Ft');
                         $('[data-id="' + id + '"] .item-total').text(response.itemTotal + ' Ft');
                         // Frissítjük a teljes összeget
                         $('#total-amount').text(response.total + ' Ft');

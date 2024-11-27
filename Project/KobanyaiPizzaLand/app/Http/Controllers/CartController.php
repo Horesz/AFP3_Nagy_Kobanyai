@@ -97,6 +97,39 @@ class CartController extends Controller
         ]);
     }
 
+    public function updateSize(Request $request, $id)
+    {
+    $cart = session()->get('cart', []);
+
+    if (isset($cart[$id])) {
+        $size = $request->input('size', 32);
+        $price = $cart[$id]['price'] / ($cart[$id]['size'] == 50 ? 2 : 1); // Eredeti ár visszaállítása
+
+        if ($size == 50) {
+            $price *= 2; // Az 50 cm-es pizza ára kétszerese
+        }
+
+        $cart[$id]['size'] = $size;
+        $cart[$id]['price'] = $price;
+
+        session()->put('cart', $cart);
+
+        // Számolja ki az új teljes összeget
+        $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'], $cart));
+        $itemTotal = $cart[$id]['price'] * $cart[$id]['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $cart[$id]['extras'] ?? [])) * $cart[$id]['quantity'];
+
+        session()->put('cartTotal', $total);
+
+        return response()->json([
+            'price' => $cart[$id]['price'],
+            'itemTotal' => $itemTotal,
+            'total' => $total
+        ]);
+    }
+
+    return response()->json(['error' => 'Item not found in cart'], 404);
+    }
+
     public function removeFromCart($id)
     {
         $cart = session()->get('cart', []);
