@@ -21,6 +21,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
 Route::get('/pizzas', [PizzaController::class, 'view'])->name('pizzas.view');
 
+Route::get('/contact', [PizzaController::class, 'contact'])->name('contact.view');
 
 Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
 
@@ -34,9 +35,7 @@ Route::post('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->nam
 
 Route::get('/payment', [PaymentController::class, 'show'])->name('payment');//->middleware('auth');
 Route::post('/order/submit', [OrderController::class, 'submit'])->name('order.submit');
-Route::get('/order/success', function () {
-    return view('order.success');
-})->name('order.success');
+
 Route::get('/order/success', [OrderController::class, 'show'])->name('order.success');
 
 Route::get('/dashboard', function () {
