@@ -135,32 +135,41 @@
 
         <div class="slider_container">
             <div class="slides fade">
+            
+            <div class="review-item"> 
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <br><div class=reviewer-name>Barnabás:</div>
+                <span class="reviewer-info">Nagyon király!</span>
+            </div>
+
+            <div class="review-item">  
+               <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+               <br><div class=reviewer-name>Dániel:</div>
+               <span class="reviewer-info">Fincsi!</span>
+            </div>
+
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Nagyon király!</span>
-            </div>
-            <div class="review-item">
-                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Fincsi!</span>
-            </div>
-            <div class="review-item">
-                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Nagyon szeretek innen rendelni!</span>
+                <br><div class=reviewer-name>Bence:</div>
+                <span class="reviewer-info">Nagyon szeretek innen rendelni!</span>
             </div>
             </div>
 
             <div class="slides fade">
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Legjobb pizzák!</span>
+                <br><div class=reviewer-name>Kristóf:</div>
+                <span class="reviewer-info">Legjobb pizzák!</span>
             </div>
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Kedvencünk a Húsimádó!</span>
+                <br><div class=reviewer-name>Bálint:</div>
+                <span class="reviewer-info">Kedvencünk a Húsimádó!</span>
             </div>
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Legjobb ajánlatok!</span>
+                <br><div class=reviewer-name>Gergő:</div>
+                <span class="reviewer-info">Legjobb ajánlatok!</span>
             </div>
             </div>
         </div>

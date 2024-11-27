@@ -872,6 +872,15 @@ thead{
     color: #ffffff;
   }
   
+  .reviewer-name {
+    
+    color: #ffffff;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-size: 16px; 
+   
+    
+  }
 
   svg {
     display: block;
