@@ -26,7 +26,23 @@
 
 @include('footer')
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        function slideSlider() {
+            $("#slider-scroller").css({"left": "0%", "transition": "all 0s linear"});
+            $("#slider-scroller").css({"left": String(parseInt($("#slider-scroller").css("left")) - 500) + "px", "transition": "all 5s linear"});
+            setTimeout(function() { moveSliderItem(); }, 5000);
+        }
 
+        function moveSliderItem() {
+            $("#slider-scroller div").first().detach().appendTo($("#slider-scroller"));
+            slideSlider();
+        }
+
+        slideSlider();
+    });
+</script>
 
 </body>
 </html>

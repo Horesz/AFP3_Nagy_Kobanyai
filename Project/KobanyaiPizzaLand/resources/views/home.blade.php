@@ -46,30 +46,6 @@
         </div>
     </section>
 
-    <div id="slider-container">
-        <div id="slider-scroller">
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[0]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[1]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[2]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[3]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[4]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[5]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[6]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[7]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[8]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[9]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[10]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[11]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[12]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[13]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[14]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[15]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[16]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[17]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[18]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[19]) }}" alt="Pizza"></div>
-    </div>
-    </div>
 
 <div class="all-the-foods">
     <div>
@@ -90,7 +66,7 @@
     </div>
     <div class="food pizza"></div>
   </div>
-  
+
   <div class="clip-path-container">
     <div class="description-holder guac-holder">
       <h4>Húsimádó </h4>
@@ -98,7 +74,7 @@
     </div>
     <div class="food guacamole"></div>
   </div>
-  
+
   <div class="clip-path-container">
     <div class="description-holder">
       <h4>Greek </h4>
@@ -106,7 +82,7 @@
     </div>
     <div class="food cookie"></div>
   </div>
-  
+
   <div class="clip-path-container">
     <div class="description-holder">
       <h4>Funghi</h4>
@@ -114,7 +90,7 @@
     </div>
     <div class="food donut"></div>
   </div>
-  
+
   <div class="clip-path-container">
     <div class="description-holder">
       <h4>Capricciosa</h4>
@@ -209,7 +185,7 @@
 
 
 
-            
+
 
             setInterval(function() {
                 imageElement.classList.add('fade-out');
@@ -240,14 +216,14 @@
 
 
         (function(){
-  
+
     })()
 
     let slideIndex = 1;
     showSlides(slideIndex);
 
     function plusSlides(n) {
-      showSlides(slideIndex += n); 
+      showSlides(slideIndex += n);
     }
 
     function currentSlide(n) {
@@ -297,7 +273,7 @@
 
     function slideAnimation(boolean){
       if (boolean === true){
-        
+
     let interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange);
 
     // Adding stop/start on hover to container
@@ -316,7 +292,7 @@
     {
         clearInterval(interval); // Clear the interval we set earlier
     }
-        
+
     function resumeSlides()
     {
         interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange); // Restart the slides animation

@@ -63,5 +63,4 @@ Route::get('/pizzamaker', [PizzaController::class, 'pizzamaker'])->name('pizzama
 
 Route::post('/add-custom-pizza', [CartController::class, 'addCustomPizza'])->name('add.custom.pizza');
 
-
 require __DIR__.'/auth.php';
