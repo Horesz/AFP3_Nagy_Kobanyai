@@ -12,7 +12,13 @@
     <title>Akciók - PizzaLand</title>
 </head>
 <body>
+
+<section class="sales">
+</section>
+
 @include('header')
+
+
 
 @include('footer')
 
