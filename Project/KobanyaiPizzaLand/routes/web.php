@@ -59,5 +59,10 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact.view'
 
 Route::get('/sales', [SalesController::class, 'index'])->name('sales.view');
 
+
+
+
+
+
 Route::post('/cart/update-size/{id}', [CartController::class, 'updateSize'])->name('cart.updateSize');
 require __DIR__.'/auth.php';
