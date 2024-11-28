@@ -26,8 +26,6 @@
 
 
 
-
-
 <section class="sales">
 <div id="slider-container">
     <div id="slider-scroller">
