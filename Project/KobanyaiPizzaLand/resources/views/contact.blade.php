@@ -37,8 +37,10 @@
             </div>
             <div class="google-map">
                 <h2>Helyszín</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14744.209365377866!2d19.0720837!3d47.4979126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc30a6600c8b%3A0xd145788d8f1b57a7!2sBudapest%2C%20Hungary!5e0!3m2!1sen!2sus!4v1636492347027!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.3873828525448!2d19.134944710848387!3d47.48451708640611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c36aead9dba1%3A0x500c4290c1ed5d0!2sBudapest%2C%20X.%20ker%C3%BClet!5e0!3m2!1shu!2shu!4v1732739791449!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            
+            
         </div>
     </section>
 

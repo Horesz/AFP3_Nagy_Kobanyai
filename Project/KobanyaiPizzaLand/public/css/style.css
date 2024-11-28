@@ -465,7 +465,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: rgba(249, 249, 249,0.4);
 }
 #cart_input{
     border-radius: 10px;
@@ -872,6 +872,15 @@ thead{
     color: #ffffff;
   }
   
+  .reviewer-name {
+    
+    color: #ffffff;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-size: 16px; 
+   
+    
+  }
 
   svg {
     display: block;
@@ -991,7 +1000,6 @@ thead{
     .container {
     max-width: 900px;
     height: auto;
-    background-color: white;
     position: relative;
     margin:auto;
   }
