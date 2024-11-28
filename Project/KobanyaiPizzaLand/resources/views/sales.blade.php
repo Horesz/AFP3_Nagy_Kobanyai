@@ -15,11 +15,6 @@
 
 @include('header')
 
-<div class="image-container">
-    <img id="rotating-image" src="{{ asset($randomImages[0]) }}" alt="Pizza">
-</div>
-<section class="sales">
-</section>
 
 
 @include('footer')
