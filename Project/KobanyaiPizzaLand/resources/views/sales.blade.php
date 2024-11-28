@@ -12,7 +12,7 @@
     <title>Akciók - PizzaLand</title>
 </head>
 <body>
-
+@include('header')
 
 @include('footer')
 
