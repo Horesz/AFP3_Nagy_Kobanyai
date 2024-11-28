@@ -21,14 +21,7 @@
 <section class="sales">
 </section>
 
-<section class="sales">
-<div id="slider-container">
-    <div id="slider-scroller">
-        @foreach ($randomImages as $image)
-        <div class="slider-item"><img id="rotating-image" src="{{ asset($image) }}" alt="Pizza"></div>
-    @endforeach</div>
-</div>
-</section>
+
 @include('footer')
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
