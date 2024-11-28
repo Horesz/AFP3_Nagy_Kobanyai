@@ -63,5 +63,6 @@ Route::get('/pizzamaker', [PizzaController::class, 'pizzamaker'])->name('pizzama
 
 Route::post('/add-custom-pizza', [CartController::class, 'addCustomPizza'])->name('add.custom.pizza');
 
+Route::post('/cart/update-size/{id}', [CartController::class, 'updateSize'])->name('cart.updateSize');
 
 require __DIR__.'/auth.php';
