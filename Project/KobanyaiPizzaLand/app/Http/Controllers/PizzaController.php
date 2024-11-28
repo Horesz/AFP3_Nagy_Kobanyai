@@ -97,4 +97,8 @@ class PizzaController extends Controller
             return response()->json($pizza);
         }
 
+        public function pizzamaker()
+        {
+            return view('pizzamaker');
+        }
 }
