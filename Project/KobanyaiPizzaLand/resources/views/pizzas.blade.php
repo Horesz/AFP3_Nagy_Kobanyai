@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
-
 </head>
 <body>
 
@@ -33,7 +32,7 @@
             <a href="{{ route('pizzamaker') }}">
                 <button type="button" class="btn pizzamaker-btn">Pizzakészítő</button>
             </a>
-            
+
             <div class="product-list">
                 @if($pizzas->isEmpty())
                     <p>Nincs találat a keresésre.</p>
@@ -73,7 +72,6 @@
             const modal = document.getElementById('pizza-details-modal');
             const closeButton = document.querySelector('.close-button');
             const pizzaDetails = document.getElementById('pizza-details');
-            const pizzaSize = document.getElementById('pizza-size');
             const totalPrice = document.getElementById('total-price');
 
             pizzaImages.forEach(image => {
@@ -91,8 +89,8 @@
                                     @csrf
                                     <div id="size-select">
                                         <label for="pizza-size">Méret:</label>
-                                            <select id="pizza-size">
-                                            <option value="32">32 cm</option>
+                                        <select id="pizza-size" name="size">
+                                            <option value="32" selected>32 cm</option>
                                             <option value="50">50 cm</option>
                                         </select>
                                     </div>

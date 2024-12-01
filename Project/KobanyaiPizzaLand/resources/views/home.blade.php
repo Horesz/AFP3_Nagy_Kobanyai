@@ -52,51 +52,63 @@
         <h2 style="color: black;">Kedvelt pizzáink</h2>
     </div>
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Cheese</h4>
       <p>A klasszikus ízek kedvelőinek, tele olvadt sajt csábító harmóniájával.</p>
     </div>
     <div class="food bibimbap"></div>
+    </a>
   </div>
 
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Diavola</h4>
       <p>Fűszeres, tüzes és izgalmas, tökéletes választás a pikáns ízek szerelmeseinek.</p>
     </div>
     <div class="food pizza"></div>
+</a>
   </div>
 
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder guac-holder">
       <h4>Húsimádó </h4>
       <p>Egy valódi ízorgia, tele zamatos húsokkal a kiadós étkezések rajongóinak.</p>
     </div>
     <div class="food guacamole"></div>
+</a>
   </div>
 
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Greek </h4>
       <p>Mediterrán ízek kavalkádja, amely a frissesség és a könnyedség jegyében készült.</p>
     </div>
     <div class="food cookie"></div>
+</a>
   </div>
 
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Funghi</h4>
       <p>A gombák szerelmeseinek, ahol az erdei aromák találkoznak a pizza puha alapjával.</p>
     </div>
     <div class="food donut"></div>
+</a>
   </div>
 
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Capricciosa</h4>
       <p>Egy változatos klasszikus, amely minden falatban új ízélményt nyújt.</p>
     </div>
     <div class="food pancake"></div>
+</a>
   </div>
 
 </div>
@@ -111,14 +123,14 @@
 
         <div class="slider_container">
             <div class="slides fade">
-            
-            <div class="review-item"> 
+
+            <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                 <br><div class=reviewer-name>Barnabás:</div>
                 <span class="reviewer-info">Nagyon király!</span>
             </div>
 
-            <div class="review-item">  
+            <div class="review-item">
                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                <br><div class=reviewer-name>Dániel:</div>
                <span class="reviewer-info">Fincsi!</span>

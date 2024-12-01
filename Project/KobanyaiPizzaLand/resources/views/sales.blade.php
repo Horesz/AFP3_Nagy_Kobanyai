@@ -11,18 +11,17 @@
     <title>Akciók - PizzaLand</title>
 </head>
 <body>
-<div class="image-container">
-                <img id="rotating-image" src="{{ asset($randomImages[0]) }}" alt="Pizza">
-            </div>
-<section class="sales">
-</section>
 
 @include('header')
 
-
-
-
-
+<section class="sales">
+    <div id="slider-container">
+        <div id="slider-scroller">
+            @foreach ($randomImages as $image)
+            <div class="slider-item"><img id="rotating-image" src="{{ asset($image) }}" alt="Pizza"></div>
+        @endforeach</div>
+    </div>
+    </section>
 
 @include('footer')
 
