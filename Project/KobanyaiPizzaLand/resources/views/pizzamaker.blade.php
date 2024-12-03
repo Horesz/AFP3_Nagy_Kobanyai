@@ -13,21 +13,21 @@
     <section class="pizzamaker">
         <div class="container">
             <h1 class="section-title">Pizzakészítő</h1>
-            <p class="section-description">Készítsd el a saját egyedi pizzádat! Válassz feltéteket, adj meg egy nevet és az árat.</p>
+            <p class="section-description">Készítsd el a saját egyedi pizzádat! Válassz feltéteket, add meg a nevet, és látni fogod az árát!</p>
             
             <form method="POST" action="{{ route('add.custom.pizza') }}" class="pizza-form">
                 @csrf
                 <div class="form-group">
                     <label for="pizza-name">Pizza neve:</label>
-                    <input type="text" id="pizza-name" name="pizza_name" placeholder="Add meg a pizza nevét" required>
+                    <input type="text" id="pizza-name" name="nev" placeholder="Add meg a pizza nevét" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="pizza-toppings">Feltétek:</label>
-                    <select name="toppings[]" id="pizza-toppings" multiple>
-                        <option value="extra_cheese" data-price="300">Extra sajt (300 Ft)</option>
-                        <option value="extra_salami" data-price="400">Extra szalámi (400 Ft)</option>
-                        <option value="extra_mushroom" data-price="200">Extra gomba (200 Ft)</option>
+                    <select name="feltet[]" id="pizza-toppings" multiple>
+                        <option value="Extra sajt" data-price="200">Extra sajt (+200 Ft)</option>
+                        <option value="Extra szalámi" data-price="300">Extra szalámi (+300 Ft)</option>
+                        <option value="Extra gomba" data-price="250">Extra gomba (+250 Ft)</option>
                     </select>
                     <p class="help-text">Tartsd lenyomva a CTRL billentyűt (vagy Mac-en a Command billentyűt) több opció kiválasztásához.</p>
                 </div>
@@ -35,11 +35,11 @@
                 <div class="form-group">
                     <label>Pizza ára:</label>
                     <p id="pizza-price-display">1000 Ft</p>
-                    <input type="hidden" id="pizza-price" name="price" value="10">
+                    <input type="hidden" id="pizza-price" name="ar" value="1000">
                 </div>
 
                 <button type="submit" class="btn-submit">
-                    <i class="fas fa-cart-plus"></i> Pizza hozzáadása a kosárhoz
+                    <i class="fas fa-cart-plus"></i> Pizza hozzáadása
                 </button>
             </form>
         </div>
