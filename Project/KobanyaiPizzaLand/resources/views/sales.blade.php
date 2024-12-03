@@ -14,8 +14,7 @@
 
 <section class="sales">
     <div class="container">
-        <h1>Menüink</h1>
-
+        <h1>Menük</h1>
         <div class="promotion-list">
             @foreach ($promotions as $promotion)
                 <div class="promotion-item" data-id="{{ $promotion['id'] }}">
