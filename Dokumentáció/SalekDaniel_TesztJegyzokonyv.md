@@ -31,6 +31,7 @@ Következõ tesztelésnél a többi funkció kerül vizsgálatra illetve elemzé
 | Kosár oldal | 2024.11.22. | A kosár oldal megfelelően működik | Működik | - |
 | Kosárban lévő pizzák megjelenítése | 2024.11.22. | A kosárban lévő pizzák helyesen jelennek meg | Működik | Dizájn hiányos |
 | Kosár elemeinek módosítása | 2024.11.22. | A kosár elemei módosíthatóak | Működik de nem minenhol jelenik meg megfelelően | Nem frissül dinamukisan a gombra kattintva |
+| Header és footer | 2024.11.17. | A header és footer minden oldalon megjelenik | Nem minden oldalon működik és néz ki meglfelelően | Backend |
 | Fizetés oldal | 2024.11.22. | A fizetés oldal megfelelően működik | Működik | - |
 | Sikeres rendelés visszaigazolása | 2024.11.22. | A sikeres rendelés visszaigazolása megjelenik | Működik | - |
 | Adatbázis migráció | 2024.11.22. | Az adatbázis migráció hibátlanul lefut | Működik | - |
@@ -43,7 +44,7 @@ A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra e
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
 | Adatbázis | 2024.12.03. | Adatbázis műkődés ellenőrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. |  - |
-| Termékek listázása | 2024.12.03. | Az adatbázisban megtalálható termékek megjelennek a weboldalon | Bejelentkezett felhasználóként is megtekinthetőek a termékek. | - |
+| Termékek listázása | 2024.12.03. | Az adatbázisban megtalálható termékek megjelennek a weboldalon | Megfelelően megjelennek a pizzák | - |
 | Főoldal dizájn | 2024.12.03. | A főoldal dizájnja megfelelően jelenik meg | Működik | - |
 | Főoldal véletlenszerű pizzák megjelenítése | 2024.12.03. | A főoldalon véletlenszerű pizzák jelennek meg | Működik | - |
 | Header és footer | 2024.12.03. | A header és footer megfelelően jelenik meg | Működik | - |
