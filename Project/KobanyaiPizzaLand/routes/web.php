@@ -68,4 +68,6 @@ Route::post('/cart/update-size/{id}', [CartController::class, 'updateSize'])->na
 
 Route::post('/custom-pizza', [CustomPizzaController::class, 'store'])->name('add.custom.pizza');
 
+Route::post('/cart/custom-pizza', [CartController::class, 'addCustomPizzaToCart'])->name('cart.addCustomPizza');
+
 require __DIR__.'/auth.php';

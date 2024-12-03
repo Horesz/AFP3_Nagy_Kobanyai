@@ -15,7 +15,8 @@
             <h1 class="section-title">Pizzakészítő</h1>
             <p class="section-description">Készítsd el a saját egyedi pizzádat! Válassz feltéteket, add meg a nevet, és látni fogod az árát!</p>
             
-            <form method="POST" action="{{ route('add.custom.pizza') }}" class="pizza-form">
+            <!-- Form a pizza hozzáadásához a kosárhoz -->
+            <form method="POST" action="{{ route('cart.addCustomPizza') }}" class="pizza-form">
                 @csrf
                 <div class="form-group">
                     <label for="pizza-name">Pizza neve:</label>
@@ -25,9 +26,9 @@
                 <div class="form-group">
                     <label for="pizza-toppings">Feltétek:</label>
                     <select name="feltet[]" id="pizza-toppings" multiple>
-                        <option value="Extra sajt" data-price="200">Extra sajt (+200 Ft)</option>
-                        <option value="Extra szalámi" data-price="300">Extra szalámi (+300 Ft)</option>
-                        <option value="Extra gomba" data-price="250">Extra gomba (+250 Ft)</option>
+                        <option value="extra_cheese" data-price="200">Extra sajt (+200 Ft)</option>
+                        <option value="extra_salami" data-price="300">Extra szalámi (+300 Ft)</option>
+                        <option value="extra_mushroom" data-price="250">Extra gomba (+250 Ft)</option>
                     </select>
                     <p class="help-text">Tartsd lenyomva a CTRL billentyűt (vagy Mac-en a Command billentyűt) több opció kiválasztásához.</p>
                 </div>

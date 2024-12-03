@@ -8,6 +8,7 @@ class CustomPizzaController extends Controller
 {
     public function store(Request $request)
 {
+    session()->put('cart', []);
     // Validálás
     $validated = $request->validate([
         'nev' => 'required|string|max:255',
