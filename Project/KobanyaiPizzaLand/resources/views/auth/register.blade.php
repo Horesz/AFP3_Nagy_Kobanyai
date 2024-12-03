@@ -1,126 +1,26 @@
-<style>
-    
-    body, html {
-        height: 100%;
-        margin: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: #fff9e6; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    
-    .register-container {
-        width: 100%;
-        max-width: 400px; 
-        padding: 20px;
-        background-color: #fffdf5;
-        border-radius: 8px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        text-align: center; 
-    }
-
-   
-    .logo-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px; 
-    }
-
-    
-    .logo-container img {
-        width: 300px; 
-        height: auto;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-size: 16px;
-    }
-
-    label {
-        font-weight: bold;
-        color: #333;
-        display: block;
-        margin-top: 12px;
-        text-align: left;
-    }
-
-    
-    .register-button {
-        background-color: #ff4b4b; 
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        margin-top: 15px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        width: 100%; 
-    }
-
-    
-    .login-link {
-        display: block;
-        margin-top: 12px;
-        color: #ff4b4b; 
-        text-decoration: underline;
-        text-align: center; 
-    }
-
-    .login-link:hover {
-        color: #ff6b6b;
-    }
-
-    .watermark{
-    position: fixed; 
-    bottom: 0; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    padding: 10px;
-    color: black;
-    font-size: 14px; 
-    text-align: center; 
-    z-index: 1000; 
-    }
-
-
-</style>
-
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+<link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<title>Regisztráció</title>
 
-<x-guest-layout>
-    
+<div class="register-container">
     <div class="logo-container">
         <a href="/" class="img">
             <img src="{{ asset('images/logo/logo.png') }}" alt="PizzaLand" id="logo">
         </a>
     </div>
 
-   
-    <div class="register-container">
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+<x-guest-layout>
 
-           
+@csrf   
             <div>
                 <label for="name">Név</label>
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
-
+            
           
             <div class="mt-4">
                 <label for="email">Email cím</label>
@@ -142,10 +42,9 @@
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
 
-            
-            <button type="submit" class="register-button ms-4">
-                    {{ __('Regisztráció') }}
-                </button>
+            <x-primary-button class="x-primary-button ms-3">
+                     {{ __('Regisztráció') }}
+            </x-primary-button>
 
             <div class="justify-end mt-4" >
             
@@ -157,6 +56,7 @@
             </div>
         </form>
     </div>
+    
     <div class = "watermark">   
     <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
     </div>
