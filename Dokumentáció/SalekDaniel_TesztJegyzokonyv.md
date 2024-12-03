@@ -23,8 +23,8 @@ Következõ tesztelésnél a többi funkció kerül vizsgálatra illetve elemzé
 | :---: | --- | --- | --- | --- |
 | Navigációs menü | 2024.11.22. | A menüsorban a gombok a megfelelő oldalra irányítanak | Műkődik | - |
 | Termékek kilistázása | 2024.11.22. | Az oldalon felsorolásként megjelennek az adatbázisban található termékek | Műkődik | - |
-| Frontend | 2024.11.22. | A weboldal megjelenésének tesztelése | A weboldal design-ja elfogadható, átlátható. | Műkődik | - |
-| Backend | 2024.11.22. | A backendben megírt kódok megfelelő műkődése | A backend eddig megírt kódjai tökéletesen műkődtek, a termék kosárba helyezése, majd onnan a rendelősek közé való felvétel megírásra szorul. | Műkődik | - |
+| Frontend | 2024.11.22. | A weboldal design-ja elfogadható, átlátható. | Műkődik | - |
+| Backend | 2024.11.22. | A backendben megírt kódok megfelelő műkődése | Műkődik | - |
 | Pizzák oldal elkészítése | 2024.11.22. | A pizzák oldala megfelelően jelenik meg | Működik | - |
 | Pizzák leírása felugró ablakban | 2024.11.22. | A pizzák leírása felugró ablakban megjelenik | Működik | - |
 | Nagy Pizza| 2024.11.22. | Nagy pizzák rendelése lehetséges | A kosárban nem megfelelő ár jelenik meg | Kosárban lévő ár |
@@ -42,8 +42,8 @@ A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra e
 
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
-| Adatbázis | 2024.12.03. | Adatbázis műkődés ellenőrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. | Nem tapasztaltam hibát. | - |
-| Termékek listázása | 2024.12.03. | Az adatbázisban megtalálható termékek megjelennek a weboldalon | Bejelentkezett felhasználóként is megtekinthetőek a termékek. | Nem tapasztaltam hibát. | - |
+| Adatbázis | 2024.12.03. | Adatbázis műkődés ellenőrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. |  - |
+| Termékek listázása | 2024.12.03. | Az adatbázisban megtalálható termékek megjelennek a weboldalon | Bejelentkezett felhasználóként is megtekinthetőek a termékek. | - |
 | Főoldal dizájn | 2024.12.03. | A főoldal dizájnja megfelelően jelenik meg | Működik | - |
 | Főoldal véletlenszerű pizzák megjelenítése | 2024.12.03. | A főoldalon véletlenszerű pizzák jelennek meg | Működik | - |
 | Header és footer | 2024.12.03. | A header és footer megfelelően jelenik meg | Működik | - |
