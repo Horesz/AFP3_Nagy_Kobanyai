@@ -29,18 +29,9 @@
                         <option value="extra_cheese" data-price="200">Extra sajt (+200 Ft)</option>
                         <option value="extra_salami" data-price="300">Extra szalámi (+300 Ft)</option>
                         <option value="extra_mushroom" data-price="250">Extra gomba (+250 Ft)</option>
-                
-                        <option value="chicken" data-price="0">Csirke</option>
-                        <option value="bbq_sauce" data-price="0">BBQ szósz</option>
-                        <option value="onion" data-price="0">Hagyma</option>
-                        <option value="cheese" data-price="0">Sajt</option>
-                        <option value="egg" data-price="0">Tojás</option>
-                        <option value="ham" data-price="0">Sonka</option>
-                        <option value="bolognese" data-price="0">Bolognai ragu</option>
                     </select>
                     <p class="help-text">Tartsd lenyomva a CTRL billentyűt (vagy Mac-en a Command billentyűt) több opció kiválasztásához.</p>
                 </div>
-                
 
                 <div class="form-group">
                     <label>Pizza ára:</label>
