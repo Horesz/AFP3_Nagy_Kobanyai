@@ -220,7 +220,7 @@ header nav a:hover {
     margin-top: 20px;
 }
 
-.products, .reviews {
+.products, .reviews, .sales {
     padding: 40px 0;
     text-align: center;
 }
@@ -274,9 +274,21 @@ header nav a:hover {
     margin-top: 30px;
     margin-bottom: 50px;
 }
+.sales h1, .products h1 {
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
 .promotion {
   padding: 40px 0;
   text-align: center;
+}
+
+.menus h1{
+  font-size: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 .promotion-item {
   display: inline-block;
@@ -1328,7 +1340,11 @@ thead{
     gap: 20px;
     justify-content: center;
 }
-
+.sales h1{
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
 .promotion-item {
     border: 1px solid #ddd;
     padding: 20px;
