@@ -29,6 +29,6 @@ A következő teszteknél a többi funkció is tesztelésre fog kerülni.
 | Frontend | 2024.11.30. | A weboldal megjelenésének tesztelése | A weboldal design-ja teljesen megfelelő, elfogadható és ízléses | Működik |
 | Backend | 2024.11.30. | A backendben megírt kódok megfelelő működése | A backend eddig megírt kódjai működtek, a termék kosárba helyezése megfelelő, a pizzák megjelennek |  Működik | A pizzakészítő nem megfelelő |
 
-A Béta teszt során a vizsgált elemek mind hibátlanul működtek mindenféle fennakadások nélkül.
+A Béta teszt során a vizsgált elemek nem teljesen hibátlanul működtek. A felület jól néz ki, egyes pizzákhoz azonban nincsen kép, az nem ideális illetve a Pizzakészítő nem helyesen müködik.
 
-A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenőrzésre kerül. Ezzel együtt az új funkciók is tesztelésre kerültek.
+A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenőrzésre kerül. Ezzel együtt az új funkciók is tesztelésre kerülnek majd, illetve a pizzakészítő is.
