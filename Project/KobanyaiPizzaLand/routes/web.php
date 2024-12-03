@@ -9,6 +9,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\CustomPizzaController;
 
 
 
@@ -64,5 +65,9 @@ Route::get('/pizzamaker', [PizzaController::class, 'pizzamaker'])->name('pizzama
 Route::post('/add-custom-pizza', [CartController::class, 'addCustomPizza'])->name('add.custom.pizza');
 
 Route::post('/cart/update-size/{id}', [CartController::class, 'updateSize'])->name('cart.updateSize');
+
+Route::post('/custom-pizza', [CustomPizzaController::class, 'store'])->name('add.custom.pizza');
+
+Route::post('/cart/custom-pizza', [CartController::class, 'addCustomPizzaToCart'])->name('cart.addCustomPizza');
 
 require __DIR__.'/auth.php';
