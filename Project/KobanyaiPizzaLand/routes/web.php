@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PizzaController;
@@ -7,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SalesController;
+
 
 
 
@@ -23,10 +26,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home.view');
 Route::get('/pizzas', [PizzaController::class, 'view'])->name('pizzas.view');
 
-Route::get('/specialoffers', [PizzaController::class, 'specialoffers'])->name('specialoffers.view');
-
 Route::get('/contact', [PizzaController::class, 'contact'])->name('contact.view');
-
 
 Route::get('/pizzas/{id}', [PizzaController::class, 'show'])->name('pizzas.show');
 
@@ -41,14 +41,13 @@ Route::post('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->nam
 
 Route::get('/payment', [PaymentController::class, 'show'])->name('payment');
 Route::post('/order/submit', [OrderController::class, 'submit'])->name('order.submit');
-Route::get('/order/success', function () {
-    return view('order.success');
-})->name('order.success');
+
 Route::get('/order/success', [OrderController::class, 'show'])->name('order.success');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -57,5 +56,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.view');
+
+Route::get('/sales', [SalesController::class, 'index'])->name('sales.view');
 
 require __DIR__.'/auth.php';

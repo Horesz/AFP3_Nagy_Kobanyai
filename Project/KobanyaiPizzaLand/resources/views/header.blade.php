@@ -5,12 +5,12 @@
         <nav>
             <a href="{{ route('home.view') }}">Kezdőlap</a>
             <a href="{{ route('pizzas.view') }}">Pizzák</a>
-            <a href="{{ route('specialoffers.view') }}">Akciók</a>
+            <a href="{{ route('sales.view') }}">Akciók</a>
             <a href="{{ route('contact.view') }}">Kapcsolat</a>
 
             @if (Route::has('login'))
                 @auth
-                    <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                    <li><a href="{{ url('/') }}">Dashboard</a></li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
