@@ -63,18 +63,22 @@ class CartController extends Controller
         return redirect()->route('pizzas.view')->with('success', 'Pizza added to cart.');
     }
 
-    private function getExtraName($price)
+    private function getExtraName($toppingId)
     {
-        switch ($price) {
-            case 200:
-                return 'Extra sajt';
-            case 300:
-                return 'Extra szalámi';
-            case 250:
-                return 'Extra gomba';
-            default:
-                return 'Ismeretlen feltét';
-        }
+    $toppings = [
+        'extra_cheese' => 'Extra sajt',
+        'extra_salami' => 'Extra szalámi',
+        'extra_mushroom' => 'Extra gomba',
+        'chicken' => 'Csirke',
+        'bbq_sauce' => 'BBQ szósz',
+        'onion' => 'Hagyma',
+        'egg' => 'Tojás',
+        'ham' => 'Sonka',
+        'bolognese' => 'Bolognai ragu',
+        'cheese' => 'Sajt'
+    ];
+
+    return $toppings[$toppingId] ?? 'Ismeretlen feltét';
     }
 
     public function updateQuantity(Request $request, $id)
@@ -199,14 +203,22 @@ class CartController extends Controller
 
 
 
-    private function getExtraPrice($key)
-    {
-        $extrasPrices = [
-            'extra_cheese' => 200,
-            'extra_salami' => 300,
-            'extra_mushroom' => 250,
-        ];
-        return $extrasPrices[$key] ?? 0;
-    }
+private function getExtraPrice($toppingId)
+{
+    $toppingsPrices = [
+        'extra_cheese' => 200,
+        'extra_salami' => 300,
+        'extra_mushroom' => 250,
+        'chicken' => 0,
+        'bbq_sauce' => 0,
+        'onion' => 0,
+        'egg' => 0,
+        'ham' => 0,
+        'bolognese' => 0,
+        'cheese' => 0
+    ];
+
+    return $toppingsPrices[$toppingId] ?? 0;
+}
 
 }
