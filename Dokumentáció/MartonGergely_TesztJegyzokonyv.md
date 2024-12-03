@@ -44,7 +44,7 @@ A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra e
 | Pizzakészítő | 2024.12.03. | A felhasználó tud saját pizzát készíteni és berakni a kosarába | A Pizzakészítő felület megjelenik elfogadhatóan, a küldés gomb müködik |Nem tapasztaltam hibát. |
 | Keresés | 2024.12.13. | A pizzák oldalon lehet név szerint szűrni a termékek közt | A szűrők megfelelően működnek. | Nem tapasztaltam hibát. |
 | Rendezés | 2024.12.13. | A pizzák oldalon lehet név szerint, ár szerint és feltételek szerint rendezni | A szűrők megfelelően működnek. | Nem tapasztaltam hibát. |
-| Kosár | 2024.12.13. | Minden felhasználó a saját kosarát meg tudja nézni | A kosarok oldalon megjelennek a megfelelő adatok és müködik a méret állitás is. | A custom pizza nem ismeri fel a feltételt, de az árát igen |
+| Kosár | 2024.12.13. | Minden felhasználó a saját kosarát meg tudja nézni | A kosarok oldalon megjelennek a megfelelő adatok és müködik a méret állitás is. | Nem tapasztaltam hibát. |
 | Rendelés leadása | 2024.12.13. | Minden felhasználó a rendelésre kattintva meg tudja adni az adatait és képes rendelni | Megjelenik a megfelelő form és a felhasználó képes beküldeni | Nem tapasztaltam hibát. |
 | Frontend | 2024.11.30. | A weboldal megjelenésének tesztelése | A weboldal design-ja teljesen megfelelő, elfogadható és ízléses | Nem tapasztaltam hibát. |
 | Backend | 2024.11.30. | A backendben megírt kódok megfelelő működése | A backend eddig megírt kódjai működtek, a termék kosárba helyezése megfelelő, a pizzák megjelennek | Nem tapasztaltam hibát. |
