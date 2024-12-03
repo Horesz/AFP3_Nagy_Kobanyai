@@ -33,13 +33,13 @@ A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra e
 
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
-| Adatbázis | 2024.12.04. | Adatbázis műkődés ellenőrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. | Nem tapasztaltam hibát. |
-| Regisztráció | 2024.12.04. | Regisztrálás a weboldalra | Fók regisztrálása sikeres. | Nem tapasztaltam hibát. |
-| Belépés | 2024.12.04. | Belépés a weboldalra | Belépés a weboldalra sikeres. | Nem tapasztaltam hibát. |
-| Autentikáció | 2024.12.04. | Felhasználó adatainak ellenőrzése | Megfelelő jogokkal rendelkező felhasználók belépés után több funkciót érnek el.| Nem tapasztaltam hibát.|
-| Új termék | 2024.12.04. | Adminként új terméket lehet felvinni a táblába | Megfelelő jogosultsággal a felület megjelenik, a funkció működik. | Nem tapasztaltam hibát. | 
-| Termékek listázása | 2024.12.04. | Az adatbázisban megtalálható termékek megjelennek a weboldalon | Bejelentkezett felhasználóként is megtekinthetőek a termékek. | Nem tapasztaltam hibát. |
-| Szűrők | 2024.12.04. | A termékek oldalon lehet név szerint keresni, valamint rendezni a termékeket | A szűrők megfelelően működnek. | Nem tapasztaltam hibát. |
-| Saját rendelések | 2024.12.04. | Minden felhasználó a saját rendelésit meg tudja nézni | Rendeléseim oldalon megjelennek a megfelelő adatok. | Nem tapasztaltam hibát. |
-| Minden rendelés | 2024.12.04. | Adminként minden felhasználó rendeléseit meg lehet nézni | Az oldal megfelelően működik. | Nem tapasztaltam hibát.|
-| Admin funkciók | 2024.12.04. | Új termék, minden rendelés felületek nem érhetőek el sima felhasználóknak | Csak admin jogosultsággal működnek a funkciók. | Nem tapasztaltam hibát. |
+| Adatbázis | 2024.12.03. | Adatbázis műkődés ellenőrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. | Nem tapasztaltam hibát. |
+| Regisztráció | 2024.12.03. | Regisztrálás a weboldalra | Fók regisztrálása sikeres. | Nem tapasztaltam hibát. |
+| Belépés | 2024.12.03. | Belépés a weboldalra | Belépés a weboldalra sikeres. | Nem tapasztaltam hibát. |
+| Autentikáció | 2024.12.03. | Felhasználó adatainak ellenőrzése | Megfelelő jogokkal rendelkező felhasználók belépés után több funkciót érnek el.| Nem tapasztaltam hibát.|
+| Új termék | 2024.12.03. | Adminként új terméket lehet felvinni a táblába | Megfelelő jogosultsággal a felület megjelenik, a funkció működik. | Nem tapasztaltam hibát. | 
+| Termékek listázása | 2024.12.03. | Az adatbázisban megtalálható termékek megjelennek a weboldalon | Bejelentkezett felhasználóként is megtekinthetőek a termékek. | Nem tapasztaltam hibát. |
+| Szűrők | 2024.12.03. | A termékek oldalon lehet név szerint keresni, valamint rendezni a termékeket | A szűrők megfelelően működnek. | Nem tapasztaltam hibát. |
+| Saját rendelések | 2024.12.03. | Minden felhasználó a saját rendelésit meg tudja nézni | Rendeléseim oldalon megjelennek a megfelelő adatok. | Nem tapasztaltam hibát. |
+| Minden rendelés | 2024.12.03. | Adminként minden felhasználó rendeléseit meg lehet nézni | Az oldal megfelelően működik. | Nem tapasztaltam hibát.|
+| Admin funkciók | 2024.12.03. | Új termék, minden rendelés felületek nem érhetőek el sima felhasználóknak | Csak admin jogosultsággal működnek a funkciók. | Nem tapasztaltam hibát. |
