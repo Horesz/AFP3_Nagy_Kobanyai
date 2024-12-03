@@ -46,81 +46,69 @@
         </div>
     </section>
 
-    <div id="slider-container">
-        <div id="slider-scroller">
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[0]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[1]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[2]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[3]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[4]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[5]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[6]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[7]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[8]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[9]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[10]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[11]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[12]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[13]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[14]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[15]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[16]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[17]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[18]) }}" alt="Pizza"></div>
-          <div class="slider-item"><img id="rotating-image" src="{{ asset($randomImages[19]) }}" alt="Pizza"></div>
-    </div>
-    </div>
 
 <div class="all-the-foods">
     <div>
         <h2 style="color: black;">Kedvelt pizzáink</h2>
     </div>
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Cheese</h4>
       <p>A klasszikus ízek kedvelőinek, tele olvadt sajt csábító harmóniájával.</p>
     </div>
     <div class="food bibimbap"></div>
+    </a>
   </div>
 
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Diavola</h4>
       <p>Fűszeres, tüzes és izgalmas, tökéletes választás a pikáns ízek szerelmeseinek.</p>
     </div>
     <div class="food pizza"></div>
+</a>
   </div>
-  
+
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder guac-holder">
       <h4>Húsimádó </h4>
       <p>Egy valódi ízorgia, tele zamatos húsokkal a kiadós étkezések rajongóinak.</p>
     </div>
     <div class="food guacamole"></div>
+</a>
   </div>
-  
+
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Greek </h4>
       <p>Mediterrán ízek kavalkádja, amely a frissesség és a könnyedség jegyében készült.</p>
     </div>
     <div class="food cookie"></div>
+</a>
   </div>
-  
+
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Funghi</h4>
       <p>A gombák szerelmeseinek, ahol az erdei aromák találkoznak a pizza puha alapjával.</p>
     </div>
     <div class="food donut"></div>
+</a>
   </div>
-  
+
   <div class="clip-path-container">
+    <a href="{{ route('pizzas.view') }}" style="text-decoration:none; color:white">
     <div class="description-holder">
       <h4>Capricciosa</h4>
       <p>Egy változatos klasszikus, amely minden falatban új ízélményt nyújt.</p>
     </div>
     <div class="food pancake"></div>
+</a>
   </div>
 
 </div>
@@ -135,32 +123,41 @@
 
         <div class="slider_container">
             <div class="slides fade">
+
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Nagyon király!</span>
+                <br><div class=reviewer-name>Barnabás:</div>
+                <span class="reviewer-info">Nagyon király!</span>
             </div>
+
             <div class="review-item">
-                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Fincsi!</span>
+               <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+               <br><div class=reviewer-name>Dániel:</div>
+               <span class="reviewer-info">Fincsi!</span>
             </div>
+
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Nagyon szeretek innen rendelni!</span>
+                <br><div class=reviewer-name>Bence:</div>
+                <span class="reviewer-info">Nagyon szeretek innen rendelni!</span>
             </div>
             </div>
 
             <div class="slides fade">
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Legjobb pizzák!</span>
+                <br><div class=reviewer-name>Kristóf:</div>
+                <span class="reviewer-info">Legjobb pizzák!</span>
             </div>
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Kedvencünk a Húsimádó!</span>
+                <br><div class=reviewer-name>Bálint:</div>
+                <span class="reviewer-info">Kedvencünk a Húsimádó!</span>
             </div>
             <div class="review-item">
                 <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
-                <br><span class="reviewer-info">Legjobb ajánlatok!</span>
+                <br><div class=reviewer-name>Gergő:</div>
+                <span class="reviewer-info">Legjobb ajánlatok!</span>
             </div>
             </div>
         </div>
@@ -200,7 +197,7 @@
 
 
 
-            
+
 
             setInterval(function() {
                 imageElement.classList.add('fade-out');
@@ -231,14 +228,14 @@
 
 
         (function(){
-  
+
     })()
 
     let slideIndex = 1;
     showSlides(slideIndex);
 
     function plusSlides(n) {
-      showSlides(slideIndex += n); 
+      showSlides(slideIndex += n);
     }
 
     function currentSlide(n) {
@@ -288,7 +285,7 @@
 
     function slideAnimation(boolean){
       if (boolean === true){
-        
+
     let interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange);
 
     // Adding stop/start on hover to container
@@ -307,7 +304,7 @@
     {
         clearInterval(interval); // Clear the interval we set earlier
     }
-        
+
     function resumeSlides()
     {
         interval = window.setInterval(function(){plusSlides(1)}, timeBetweenSlideChange); // Restart the slides animation

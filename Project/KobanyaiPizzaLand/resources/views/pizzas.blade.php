@@ -1,4 +1,3 @@
-<!-- resources/views/pizzas.blade.php -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="{{ asset('images/logo/logo.png') }}" type="image/png">
-
 </head>
 <body>
 
@@ -31,6 +29,10 @@
                     <option value="toppings" {{ request()->input('sort') == 'toppings' ? 'selected' : '' }}>Feltétek szerint</option>
                 </select>
             </form>
+            <a href="{{ route('pizzamaker') }}">
+                <button type="button" class="btn pizzamaker-btn">Pizzakészítő</button>
+            </a>
+
             <div class="product-list">
                 @if($pizzas->isEmpty())
                     <p>Nincs találat a keresésre.</p>
@@ -52,8 +54,6 @@
         </div>
     </section>
 
-
-
     <div id="pizza-details-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
@@ -72,6 +72,7 @@
             const modal = document.getElementById('pizza-details-modal');
             const closeButton = document.querySelector('.close-button');
             const pizzaDetails = document.getElementById('pizza-details');
+            const totalPrice = document.getElementById('total-price');
 
             pizzaImages.forEach(image => {
                 image.addEventListener('click', function () {
@@ -86,6 +87,13 @@
                                 <img src="/images/${data.nev.toLowerCase().replace(/ /g, '')}.jpg" alt="${data.nev}">
                                 <form action="/add-to-cart/${data.id}" method="POST">
                                     @csrf
+                                    <div id="size-select">
+                                        <label for="pizza-size">Méret:</label>
+                                        <select id="pizza-size" name="size">
+                                            <option value="32" selected>32 cm</option>
+                                            <option value="50">50 cm</option>
+                                        </select>
+                                    </div>
                                     <div id="extra-toppings">
                                         <h3>Extra feltétek</h3>
                                         <label><input type="checkbox" value="200" class="extra-topping" name="extras[]"> Extra sajt (+200 Ft)</label><br>
@@ -108,6 +116,16 @@
                         totalPrice += parseInt(event.target.value);
                     } else {
                         totalPrice -= parseInt(event.target.value);
+                    }
+                    document.getElementById('total-price').innerText = `Összesen: ${totalPrice} Ft`;
+                }
+                if (event.target.id === 'pizza-size') {
+                    let totalPrice = parseInt(document.getElementById('total-price').innerText.replace('Összesen: ', '').replace(' Ft', ''));
+                    let sizeValue = parseInt(event.target.value);
+                    if (sizeValue === 50) {
+                        totalPrice *= 2;
+                    } else {
+                        totalPrice = (totalPrice / 2) * (sizeValue / 32);
                     }
                     document.getElementById('total-price').innerText = `Összesen: ${totalPrice} Ft`;
                 }

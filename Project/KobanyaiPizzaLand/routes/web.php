@@ -59,4 +59,10 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact.view'
 
 Route::get('/sales', [SalesController::class, 'index'])->name('sales.view');
 
+Route::get('/pizzamaker', [PizzaController::class, 'pizzamaker'])->name('pizzamaker');
+
+Route::post('/add-custom-pizza', [CartController::class, 'addCustomPizza'])->name('add.custom.pizza');
+
+Route::post('/cart/update-size/{id}', [CartController::class, 'updateSize'])->name('cart.updateSize');
+
 require __DIR__.'/auth.php';
