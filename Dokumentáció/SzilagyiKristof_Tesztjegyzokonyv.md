@@ -9,15 +9,15 @@ Operációs rendszer: Windows 10
 
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
-| Regisztráció | 2024.11.27. | Az adatbázison belül az user adatait a user táblában sikeresen eltárolja | Működik | - |
-| Belépés | 2024.11.27. | A felhasználó email címével és a hozzátartozó és megfelelő jelszóval bejelentkezünk az adott felhasználóként | Működik | - |
-| Profil | 2024.11.27. | Bejelentkezett felhasználó a saját adatait meg tudja tekinteni, szerkeszteni | Működik | - |
-| Adatbázis | 2024.11.27. | Az adatbázis kapcsolat, migráció működik | Működik | - |
-| Autentikáció | 2024.11.27. | Csak belépés után érhetőek el a megfelelő funkciók | Működik | - |
+| Regisztráció | 2024.11.24. | Az adatbázis elmenti a user adatait és be is lépjen vele együtt | Működik | - |
+| Belépés | 2024.11.25. | A felhasználónév és jelszó beírásával beengedjen a rendszer | Működik | A bejelentkezés után volt egy külön dashboard gomb ami a main oldalra vitt, ami felesleges. |
+| Profil | 2024.11.27. | Bejelentkezés után lehessen szerkeszteni a saját adatainkat. | Működik | - |
+| Adatbázis | 2024.11.27. | Van kapcsolat és migráció is jól működjön.  | Működik | - |
+| Autentikáció | 2024.11.28. | Egyes funkciók egyes belépés után működnek. | Működik | - |
 
-Az Alfa tesztelés során a megvizsgált emelek müködtek hibák nélkül, javításra nem szorultak.
+Az Alfa tesztelés során a megvizsgált emelek müködtek hibák nélkül, javításra csak egy-két mellék elem szorult.
 
-A következő teszteknél a többi funkció is tesztelésre fog kerülni.
+A többi jövőbeli tesztnél több funkcionális teszt lesz.
 
 ## Béta teszt
 
