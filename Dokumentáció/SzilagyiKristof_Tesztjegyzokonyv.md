@@ -23,16 +23,17 @@ A többi jövőbeli tesztnél több funkcionális teszt lesz.
 
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
-| Navigációs menü | 2024.11.30. | A menüsorban a gombok megjelennek és a megfelelő helyre irányítanak | Működik | - |
-| Pizzák kilistázása | 2024.11.30. | A pizzák felületen megjelennek a rendelhető pizzák | Működik | - |
-| Pizzakészítő | 2024.11.30. | A felhasználó tud saját pizzát készíteni és berakni a kosarába | Nem Működik | A felület félkész és nincs rendesen bekötve az adatbázisba, hibát ad a hozzáadás gomb |
-| Kosár | 2024.11.30. | A felhasználó által a kosárba helyezett pizzák megfelelően megjelennek. | Működik | - |
-| Frontend | 2024.11.30. | A weboldal megjelenésének tesztelése | A weboldal design-ja teljesen megfelelő, elfogadható és ízléses | Működik | A Pizzakészítő csiszolásra szorul |
-| Backend | 2024.11.30. | A backendben megírt kódok megfelelő működése | A backend eddig megírt kódjai működtek, a termék kosárba helyezése megfelelő, a pizzák megjelennek |  Működik | A pizzakészítő nem megfelelő |
+| Navigációs menü | 2024.11.29. | A menüsorban a gombok megjelennek és jó helyre irányítanak | Részlegesen működik | a menük pont nem vitt sehova csak hibakódot adott ki. |
+| Navigációs menü | 2024.11.29. | A menüsorban a gombok megjelennek és jó helyre irányítanak | Működik | - |
+| Pizzák kilistázása | 2024.11.30. | A pizzák oldalon megjelennek a pizzák  | Működik | - |
+| Pizzakészítő | 2024.11.30. | Saját pizzát készíteni és berakni a kosarába a felhasználó | Nem Működik | Nem rendsen tölti fel az adatbázisba, hibás a gombja. |
+| Kosár | 2024.11.30. | A hozzáadott étel megjelenik a kosárban. | Működik | - |
+| Frontend | 2024.11.30. | A weboldal megjelenésének tesztelése | A weboldal design-ja teljesen megfelelő, elfogadható és ízléses | Működik | A bejelentkezés után dashboard gomb mindig ott van, register résznél egy másik nagy logó lóg bele a képbe, de attól függetlenül működik. |
+| Backend | 2024.11.30. | A backendben megírt kódok megfelelő működése | Az eddig megírt kódok működjenek, a termékek kosárba helyezése megfelelő, a pizzák megjelennek |  Működik | A menu pontban a kosár redirectel rossz helyre és rossz dolgokat ad hozzá a kosárhoz. |
 
-A Béta teszt során a vizsgált elemek nem teljesen hibátlanul működtek. A felület jól néz ki, egyes pizzákhoz azonban nincsen kép, az nem ideális illetve a Pizzakészítő nem helyesen müködik.
+A Béta teszt során voltak fennakadások működésben, a felület kinézetre 90%-ban kész van, a menu oldalon a design se a funckionalitás még nem tökéletes, de már közel van a készhez.
 
-A végleges tesztelés során az összes fent felsorolt vizsgálati elem újra ellenőrzésre kerül. Ezzel együtt az új funkciók is tesztelésre kerülnek majd, illetve a pizzakészítő is.
+A végleges tesztnél az összes ilyen elemet újra fogom tekinteni.
 
 ## Végleges teszt
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
@@ -53,6 +54,6 @@ A Végleges teszt lezajlott és minden funkció rendesen működik, esztétikail
 
 Átadásra készen áll a megrendelőnek.
 
-Tesztelést végezte és írta: Márton Gergely
+Tesztelést végezte és írta: Szilágyi Kristóf
 
-Befejezve: 2024.12.03.
+Befejezve: 2024.12.04.
