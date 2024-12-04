@@ -38,19 +38,19 @@ A végleges tesztnél az összes ilyen elemet újra fogom tekinteni.
 ## Végleges teszt
 | Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
 | :---: | --- | --- | --- | --- |
-| Adatbázis | 2024.12.03. | Adatbázis működés ellenőrzése | A táblák a küldött adatokat sikeresen rögzítik, adatvesztés nincs. | Nem tapasztaltam hibát. |
-| Regisztráció | 2024.12.03. | Regisztrálás a weboldalra | Fiók regisztrálása sikeres. | Nem tapasztaltam hibát. |
-| Belépés | 2024.12.03. | Bejelentkezés a weboldalra | Belépés a weboldalra sikeres. | Nem tapasztaltam hibát. |
-| Pizzák kilistázása | 2024.12.03. | A pizzák felületen megjelennek a rendelhető pizzák | A pizzák igényesen megjelennek képekkel | Nem tapasztaltam hibát. | 
-| Pizzakészítő | 2024.12.03. | A felhasználó tud saját pizzát készíteni és berakni a kosarába | A Pizzakészítő felület megjelenik elfogadhatóan, a küldés gomb müködik |Nem tapasztaltam hibát. |
-| Keresés | 2024.12.13. | A pizzák oldalon lehet név szerint szűrni a termékek közt | A szűrők megfelelően működnek. | Nem tapasztaltam hibát. |
-| Rendezés | 2024.12.13. | A pizzák oldalon lehet név szerint, ár szerint és feltételek szerint rendezni | A szűrők megfelelően működnek. | Nem tapasztaltam hibát. |
-| Kosár | 2024.12.13. | Minden felhasználó a saját kosarát meg tudja nézni | A kosarok oldalon megjelennek a megfelelő adatok és müködik a méret állitás is. | Nem tapasztaltam hibát. |
-| Rendelés leadása | 2024.12.13. | Minden felhasználó a rendelésre kattintva meg tudja adni az adatait és képes rendelni | Megjelenik a megfelelő form és a felhasználó képes beküldeni | Nem tapasztaltam hibát. |
-| Frontend | 2024.11.30. | A weboldal megjelenésének tesztelése | A weboldal design-ja teljesen megfelelő, elfogadható és ízléses | Nem tapasztaltam hibát. |
-| Backend | 2024.11.30. | A backendben megírt kódok megfelelő működése | A backend eddig megírt kódjai működtek, a termék kosárba helyezése megfelelő, a pizzák megjelennek | Nem tapasztaltam hibát. |
+| Adatbázis | 2024.12.02. | Adatbázis működés ellenőrzése | A táblák a küldött adatokat jól rögzítikk, adatvesztés nélkül. | Hibátlannak néz ki. |
+| Regisztráció | 2024.12.02. | Regisztrálás a weboldalra | Fiók regisztrálása sikeres. | Minden design beli hiba kijavitva |
+| Belépés | 2024.12.02. | Bejelentkezés a weboldalra | Belépés a weboldalra sikeres. | Jól működik |
+| Pizzák kilistázása | 2024.12.02. | A pizzák oldalon megjelennek a rendelhető pizzák | A pizzák igényesen megjelennek képekkel | Nincs hiba. | 
+| Pizzakészítő | 2024.12.02. | A felhasználó tud saját pizzát összerakni és behelyezni a kosárba | A Pizzakészítő felület megjelenik, a küldés gomb müködik | Működik. |
+| Keresés | 2024.12.04. | A pizzák oldalon lehet név szerint szűrni a termékek közt | A szűrők megfelelően működnek. | Nem tapasztaltam hibát. |
+| Rendezés | 2024.12.04. | A pizzák oldalon lehet ár szerint és feltételek szerint rendezni | A szűrők megfelelően működnek. | Nem volt semmilyen hiba. |
+| Kosár | 2024.12.04. | A saját kosaramat meg tudom nézni | A kosarok oldalon megjelennek a megfelelő adatok és müködik a méret állitás is. | Hibátlan. |
+| Rendelés leadása | 2024.12.04. | Minden felhasználó a rendelésre kattintva meg tudja adni az adatait és képes rendelni | Megjelenik a megfelelő forma és a felhasználó képes beküldeni | Nem tapasztaltam hibát. |
+| Frontend | 2024.12.04. | A weboldal megjelenésének tesztelése | A weboldal design-ja jól néz ki, elfogadható. | Nem találtam hibát. |
+| Backend | 2024.12.04 | A backendben megírt kódok megfelelő működése | A backend eddig megírt kódjai működtek, a termék kosárba helyezése megfelelő, a pizzák megjelennek | Nem láttam semmilyen hibát. |
 
-A Végleges teszt lezajlott és minden funkció rendesen működik, esztétikailag is megfelelő a program.
+A Végleges tesztnek vége és minden funkció rendesen működik, design ügyileg is megfelelő a program használatra.
 
 Átadásra készen áll a megrendelőnek.
 
