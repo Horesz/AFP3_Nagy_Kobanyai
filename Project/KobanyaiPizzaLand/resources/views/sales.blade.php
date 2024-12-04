@@ -16,6 +16,7 @@
     <div class="container">
        <div class="promotion-title"><h1>Menüink</h1></div> 
 
+
         <div class="promotion-list">
             @foreach ($promotions as $promotion)
                 <div class="promotion-item" data-id="{{ $promotion['id'] }}">

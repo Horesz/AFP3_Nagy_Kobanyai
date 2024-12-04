@@ -220,7 +220,7 @@ header nav a:hover {
     margin-top: 20px;
 }
 
-.products, .reviews {
+.products, .reviews, .sales {
     padding: 40px 0;
     text-align: center;
 }
@@ -274,7 +274,6 @@ header nav a:hover {
     margin-top: 30px;
     margin-bottom: 50px;
 }
-
 
 footer {
     background-color: #333;
@@ -1274,6 +1273,75 @@ thead{
     gap: 20px;
     justify-content: center;
 }
+.sales h1, .products h1 {
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.promotion {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.menus h1 {
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.promotion-item {
+    display: inline-block;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    height: auto;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    vertical-align: top;
+    border-radius: 20px;
+    background: rgb(255,244,147);
+    background: linear-gradient(180deg, rgba(255,244,147,1) 0%, rgba(255,213,58,1) 100%);
+    font-size: larger;
+    box-shadow: 0px 10px 15px rgb(122, 122, 122);
+    text-align: center;
+    padding: 20px;
+}
+
+.promotion-item img {
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.promotion-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.promotion-image:hover {
+    transform: scale(1.01);
+    transition: .3s;
+    box-shadow: #4d0a0a 0px 0px 10px;
+}
+
+.promotion-button {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.promotion-description {
+    margin-top: 50px;
+    overflow: hidden;
+}
+
 
 .promotion-item img {
   border-radius: 20px;

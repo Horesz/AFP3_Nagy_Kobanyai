@@ -9,6 +9,7 @@ class CartController extends Controller
 {
     public function viewCart()
     {
+        
         $cart = session()->get('cart', []);
 
         $total = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'], $cart));
@@ -62,18 +63,21 @@ class CartController extends Controller
         return redirect()->route('pizzas.view')->with('success', 'Pizza added to cart.');
     }
 
-    private function getExtraName($price)
+    private function getExtraName($toppingId)
     {
-        switch ($price) {
-            case 200:
-                return 'Extra sajt';
-            case 300:
-                return 'Extra szalámi';
-            case 250:
-                return 'Extra gomba';
-            default:
-                return 'Ismeretlen feltét';
-        }
+        $toppings = [
+            'extra_cheese' => 'Extra sajt',
+            'extra_salami' => 'Extra szalámi',
+            'extra_mushroom' => 'Extra gomba',
+            'chicken' => 'Csirke',
+            'bbq_sauce' => 'BBQ szósz',
+            'onion' => 'Hagyma',
+            'egg' => 'Tojás',
+            'ham' => 'Sonka',
+            'bolognese' => 'Bolognai ragu',
+            'cheese' => 'Sajt'
+        ];
+        return $toppings[$toppingId] ?? 'Ismeretlen feltét';
     }
 
     public function updateQuantity(Request $request, $id)
@@ -143,29 +147,48 @@ class CartController extends Controller
     }
     
     public function addCustomPizzaToCart(Request $request)
-    {
-    $pizzaName = $request->input('pizza_name', 'Egyedi Pizza');
-    $price = (int) $request->input('price', 0);
-    $extras = $request->input('toppings', []);
-    
+{
+    // Pizza adatainak beolvasása
+    $pizzaName = $request->input('nev', 'Egyedi Pizza');
+    $basePrice = (int) $request->input('ar', 0);  // Az alapár, amit a felhasználó megad
+    $toppings = $request->input('feltet', []);  // A feltétek, amit a felhasználó választott
+    $size = $request->input('size', 32);  // Méret, alapértelmezett: 32 cm
+
+    // Kosár betöltése session-ből
     $cart = session()->get('cart', []);
 
+    // Ha a kosár nem egy tömb (pl. sztring lenne), akkor inicializáljuk
+    if (!is_array($cart)) {
+        $cart = [];
+    }
+
+    // Egyedi pizza ID generálása
     $customId = 'custom_' . uniqid();
 
-    $extrasFormatted = array_map(fn($extra) => [
-        'name' => $this->getExtraName($extra),
-        'price' => $this->getExtraPrice($extra)
-    ], $extras);
+    // Feltétek formázása
+    $toppingsFormatted = array_map(fn($topping) => [
+        'name' => $this->getExtraName($topping),
+        'price' => $this->getExtraPrice($topping)
+    ], $toppings);
 
+    // Méret és ár kezelése
+    if ($size == 50) {
+        $basePrice *= 2;  // Ha 50 cm-es pizza, akkor az ára kétszeres
+    }
+
+    // Kosárba helyezés
     $cart[$customId] = [
         "name" => $pizzaName,
-        "price" => $price,
+        "price" => $basePrice,
         "quantity" => 1,
-        "extras" => $extrasFormatted
+        "size" => $size,
+        "extras" => $toppingsFormatted
     ];
 
+    // Kosár frissítése session-ben
     session()->put('cart', $cart);
 
+    // Teljes ár számítása
     $total = array_sum(array_map(
         fn($item) => $item['price'] * $item['quantity'] + array_sum(array_map(fn($extra) => $extra['price'], $item['extras'] ?? [])) * $item['quantity'],
         $cart
@@ -173,18 +196,28 @@ class CartController extends Controller
 
     session()->put('cartTotal', $total);
 
+    // Visszaállás a pizzák oldalra
     return redirect()->route('pizzas.view')->with('success', 'Egyedi pizza hozzáadva a kosárhoz.');
-    }
+}
 
-    private function getExtraPrice($key)
-    {
-        $extrasPrices = [
-            'extra_cheese' => 200,
-            'extra_salami' => 300,
-            'extra_mushroom' => 250,
-        ];
-        return $extrasPrices[$key] ?? 0;
-    }
+
+
+private function getExtraPrice($toppingId)
+{
+    $toppingsPrices = [
+        'extra_cheese' => 200,
+        'extra_salami' => 300,
+        'extra_mushroom' => 250,
+        'chicken' => 0,
+        'bbq_sauce' => 0,
+        'onion' => 0,
+        'egg' => 0,
+        'ham' => 0,
+        'bolognese' => 0,
+        'cheese' => 0
+    ];
+    return $toppingsPrices[$toppingId] ?? 0;
+}
 
 }
 
