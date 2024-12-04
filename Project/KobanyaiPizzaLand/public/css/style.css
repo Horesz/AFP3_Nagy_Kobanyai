@@ -1318,7 +1318,10 @@ thead{
   
 }
 
-
+.promotion-title{
+  text-align: center;
+  font-size: 20px;
+}
 
 .promotion-image {
   
