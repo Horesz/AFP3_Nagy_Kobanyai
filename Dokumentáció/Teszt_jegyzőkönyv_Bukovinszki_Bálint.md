@@ -58,4 +58,4 @@ A Végleges teszt lezajlott, és minden funkció rendesen működik. Esztétikai
 
 Tesztelést végezte és írta: Bukovinszki Bálint
 
-Befejezve: 2024.12.13.
+Befejezve: 2024.12.04.
