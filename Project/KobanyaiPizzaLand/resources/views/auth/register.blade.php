@@ -5,22 +5,29 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <title>Regisztráció</title>
 
+
 <div class="register-container">
-    <div class="logo-container">
+
+
+<div class="logo-container">
         <a href="/" class="img">
             <img src="{{ asset('images/logo/logo.png') }}" alt="PizzaLand" id="logo">
         </a>
     </div>
 
+   
+
 <x-guest-layout>
 
 @csrf   
+
             <div>
                 <label for="name">Név</label>
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
             
+  
           
             <div class="mt-4">
                 <label for="email">Email cím</label>
@@ -56,8 +63,7 @@
             </div>
         </form>
     </div>
-    
+    </x-guest-layout>
     <div class = "watermark">   
     <p>&copy; 2024 Kőbányai Pizzéria. Minden jog fenntartva.</p>
     </div>
-</x-guest-layout>

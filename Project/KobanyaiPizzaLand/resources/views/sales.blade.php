@@ -14,7 +14,9 @@
 
 <section class="sales">
     <div class="container">
-        <h1>Menük</h1>
+       <div class="promotion-title"><h1>Menüink</h1></div> 
+
+
         <div class="promotion-list">
             @foreach ($promotions as $promotion)
                 <div class="promotion-item" data-id="{{ $promotion['id'] }}">
@@ -27,6 +29,7 @@
                         @csrf
                         <button type="submit" class="btn promotion-button"><i class="fas fa-shopping-bag"></i></button>
                     </form>
+                    
                 </div>
             @endforeach
         </div>
@@ -34,6 +37,9 @@
 </section>
 
 @include('footer')
+
+
+
 
 </body>
 </html>
